@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public MouseControl m;
+
     private void Awake()
     {
         if(instance == null)
@@ -16,6 +18,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+
+        Debug.Log("Yes?");
+
+        m = GameObject.FindWithTag("MainCamera").GetComponent<MouseControl>();
     }
 
     // Start is called before the first frame update

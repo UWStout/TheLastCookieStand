@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseControl : MonoBehaviour
 {
-    Cookie holdingObject = null;
+    public Cookie holdingCookie = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,11 +44,12 @@ public class MouseControl : MonoBehaviour
 
 
         
-        if (holdingObject != null)
+        if (holdingCookie != null)
         {
+            Debug.Log("Running Hold Cookie");
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;
-            holdingObject.gameObject.transform.position = pz;
+            holdingCookie.gameObject.transform.position = pz;
         }
         
     }
