@@ -16,10 +16,10 @@ MonoBehaviour:
   - Enemy: {fileID: 841054533062793785, guid: aec5efc2f2c540547a8fa8c4baabdbc8, type: 3}
     Frequency: 1
   - Enemy: {fileID: 300977446092033291, guid: ad384208b660afa4b8c87df39fb89b84, type: 3}
-    Frequency: 2
+    Frequency: 1
   - Enemy: {fileID: 5166328193807909128, guid: 00731eb70edc14d44a3cb8010e75445c, type: 3}
-    Frequency: 3
+    Frequency: 1
   - Enemy: {fileID: 8281497706868137833, guid: 1799eb234b105074193789e3aa6a61b5, type: 3}
-    Frequency: 4
+    Frequency: 8
   numOfEnemies: 20
   timeBetweenSpawns: 5
