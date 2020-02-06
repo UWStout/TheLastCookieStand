@@ -25,7 +25,7 @@ public class SpawnTile : MonoBehaviour
         {
             Cookie newCookie = Instantiate(c);
             newCookie.gameObject.transform.position = this.gameObject.transform.position;
-            gm.m.holdingCookie = newCookie;
+            gm.mc.holdingCookie = newCookie;
         }
     }
 }
