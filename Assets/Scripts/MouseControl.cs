@@ -46,17 +46,11 @@ public class MouseControl : MonoBehaviour
         
         if (holdingCookie != null)
         {
-            Debug.Log("Running Hold Cookie");
+            //Debug.Log("Running Hold Cookie");
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;
             holdingCookie.gameObject.transform.position = pz;
         }
         
-    }
-
-    void OnMouseDown()
-    {
-        // Destroy the gameObject after clicking on it
-        Destroy(gameObject);
     }
 }

@@ -5,7 +5,12 @@ using UnityEditor;
 
 public class Cookie : MonoBehaviour
 {
-    Tile currTile;
+    public Tile currTile = null;
+    public bool isBaked = false;
+    public bool isBurnt = false;
+    public float bakeTime = 12f;
+    public float burntTime = 24f;
+    public float cookTimer = 0f;
     //SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -13,25 +18,28 @@ public class Cookie : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        if(currTile != null && cookTimer < burntTime && currTile.tileType.Equals("Oven"))
+        {
+            cookTimer += 1f * Time.deltaTime;
+            
+            if(cookTimer >= burntTime)
+            {
+                Debug.Log("Burnt");
+                isBurnt = true;
+            }
+            else if (cookTimer >= bakeTime)
+            {
+                Debug.Log("Baked");
+                isBaked = true;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void SetTile(Tile t)
-    {
-
-    }
-
-    public void SetTile(OvenTile t)
-    {
-
-    }
-
-    void OnMouseDown()
-    {
-        // Destroy the gameObject after clicking on it
-        Destroy(gameObject);
     }
 }

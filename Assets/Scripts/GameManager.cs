@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Yes?");
 
         mc = GameObject.FindWithTag("MainCamera").GetComponent<MouseControl>();
+        Debug.Log(mc);
     }
 
     // Start is called before the first frame update
