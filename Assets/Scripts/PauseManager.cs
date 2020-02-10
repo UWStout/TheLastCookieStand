@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PauseManager : MonoBehaviour
     public Image pauseButton;
     public Sprite pauseSprite;
     public Sprite playSprite;
+    public string mainMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +41,12 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
         }
+    }
+
+    public void MainMenu()
+    {
+        Debug.Log("LoadScene");
+        SceneManager.LoadScene(mainMenu);
+
     }
 }
