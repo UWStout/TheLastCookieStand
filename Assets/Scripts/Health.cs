@@ -11,6 +11,16 @@ public class Health : MonoBehaviour
         
     }
 
+    public void RemoveHealth(float damage)
+    {
+        health -= damage;
+    }
+
+    public void AddHealth(float heal)
+    {
+        health += heal;
+    }
+
     // Update is called once per frame
     void Update()
     {

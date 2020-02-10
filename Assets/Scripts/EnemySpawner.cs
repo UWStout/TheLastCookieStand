@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameManager gm;
     //Where we want to spawn the dinos.
     public Vector2[] spawnLocationsArray;
     //WaveData contains level information for each wave.
@@ -32,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         //It might make since to temporarily disable the enemy spawner when it is not being used. Right now I am just using a check though.
-        if (gm.EnemiesLeftToSpawn>0)
+        if (GameManager.instance.EnemiesLeftToSpawn>0)
         {
             //This is just a do something on a timer script.
             if (timeTracker > 0)
@@ -51,13 +50,13 @@ public class EnemySpawner : MonoBehaviour
     public void SetupNewWave()
     {
         //Tells the game manager how many enemies to expect.
-        gm.EnemiesLeftToSpawn = Waves[gm.CurrentWave].numOfEnemies;
+        GameManager.instance.EnemiesLeftToSpawn = Waves[GameManager.instance.CurrentWave].numOfEnemies;
         //Gets a time between each dino.
-        timeBetweenSpawns = Waves[gm.CurrentWave].timeBetweenSpawns;
+        timeBetweenSpawns = Waves[GameManager.instance.CurrentWave].timeBetweenSpawns;
         //Makes a new list to keep track of enemies.
         EnemyList = new List<GameObject>();
         //Populates a list full of enemies with a number of each equal to their frequency.
-        foreach (WaveData.EnemFreq enFr in Waves[gm.CurrentWave].EnemiesAndFrequency)
+        foreach (WaveData.EnemFreq enFr in Waves[GameManager.instance.CurrentWave].EnemiesAndFrequency)
         {
             for (int i = 0; i < enFr.Frequency; i++)
             {
@@ -97,7 +96,7 @@ public class EnemySpawner : MonoBehaviour
         //Makes a dino
         Instantiate(dinosaur, tempLoc, Quaternion.identity);
         //Tells the game manager stuff about how much longer the level goes for.
-        gm.EnemiesLeftAlive += 1;
-        gm.EnemiesLeftToSpawn -= 1;
+        GameManager.instance.EnemiesLeftAlive += 1;
+        GameManager.instance.EnemiesLeftToSpawn -= 1;
     }
 }

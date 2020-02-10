@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6749331924943266387}
   m_Layer: 0
   m_Name: Raptor
-  m_TagString: Untagged
+  m_TagString: Dino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1268903021
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fc8ee3d7aae830e4ab874c5cd0ddce96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -149,6 +149,8 @@ MonoBehaviour:
   mvmnt: {fileID: -1152472016560440524}
   sr: {fileID: 6108523141847856520}
   rb2d: {fileID: 2838485105209481775}
+  attackDamage: 1.5
+  attackDelay: 1
 --- !u!61 &6749331924943266387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,10 +161,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.4603753, y: 0.9166069}
+  m_Offset: {x: -0.90463734, y: 0.9166069}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -173,5 +175,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.503802, y: 7.990198}
+  m_Size: {x: 6.3923244, y: 7.990198}
   m_EdgeRadius: 0

@@ -8,8 +8,9 @@ public class DinoBehavior : MonoBehaviour
     public Movement mvmnt;
     public SpriteRenderer sr;
     public Rigidbody2D rb2d;
-    public GameManager gm;
-
+    public float attackDamage;
+    float attackTimer = 0.0f;
+    public float attackDelay;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +28,6 @@ public class DinoBehavior : MonoBehaviour
 
         sr.sortingOrder = Mathf.CeilToInt((gameObject.transform.position.y*-1) +5);
 
-        //Probably a better way to do this.
-        gm = GameObject.Find("ControllerObject").GetComponent<GameManager>();
-
 
     }
 
@@ -39,8 +37,46 @@ public class DinoBehavior : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Cookie"))
+        {
+            mvmnt.StopMoving();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+
+        if (other.gameObject.tag.Equals("Cookie") && attackTimer == 0.0f)
+        {
+            other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage);
+            attackTimer += Time.deltaTime;
+        }
+        else if (other.gameObject.tag.Equals("Cookie"))
+        {
+            attackTimer += Time.deltaTime;
+        }
+
+        if(attackTimer >= attackDelay)
+        {
+            attackTimer = 0.0f;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        mvmnt.StartMoving();
+        attackTimer = 0.0f;
+    }
+
     private void OnDestroy()
     {
-        gm.EnemiesLeftAlive -= 1;
+        GameManager.instance.EnemiesLeftAlive -= 1;
     }
 }

@@ -22,12 +22,18 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("HITTING TILE");
         if (tileType.Equals("Cookie") && !GameManager.instance.mc.holdingCookie)
         {
             Cookie newCookie = Instantiate(c);
             newCookie.gameObject.transform.position = this.gameObject.transform.position;
             //Debug.Log(newCookie);
             GameManager.instance.mc.holdingCookie = newCookie;
+        }
+        else if(tileType.Equals("Cookie") && GameManager.instance.mc.holdingCookie)
+        {
+            Destroy(GameManager.instance.mc.holdingCookie.gameObject);
+            GameManager.instance.mc.holdingCookie = null;
         }
         else if (tileType.Equals("Oven") && GameManager.instance.mc.holdingCookie && cookieOnTile == null)
         {
@@ -43,7 +49,7 @@ public class Tile : MonoBehaviour
             GameManager.instance.mc.holdingCookie.currTile = null;
             cookieOnTile = null;
         }
-        else if(tileType.Equals("Tile") && cookieOnTile == null && (GameManager.instance.mc.holdingCookie.isBaked || GameManager.instance.mc.holdingCookie.isBurnt))
+        else if(tileType.Equals("Tile") && cookieOnTile == null && GameManager.instance.mc.holdingCookie != null && (GameManager.instance.mc.holdingCookie.isBaked || GameManager.instance.mc.holdingCookie.isBurnt))
         {
             GameManager.instance.mc.holdingCookie.currTile = this;
             cookieOnTile = GameManager.instance.mc.holdingCookie;

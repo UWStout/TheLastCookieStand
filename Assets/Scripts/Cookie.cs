@@ -5,6 +5,8 @@ using UnityEditor;
 
 public class Cookie : MonoBehaviour
 {
+    public Health hlth;
+    public Movement mvmnt;
     public Tile currTile = null;
     public bool isBaked = false;
     public bool isBurnt = false;
