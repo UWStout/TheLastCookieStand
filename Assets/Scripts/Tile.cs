@@ -7,11 +7,12 @@ public class Tile : MonoBehaviour
     Cookie cookieOnTile = null;
     public string tileType;
     public Cookie c;
+    public Sprite[] s;
     //GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -22,9 +23,15 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("HITTING TILE");
+        //Debug.Log("HITTING TILE");
         if (tileType.Equals("Cookie") && !GameManager.instance.mc.holdingCookie)
         {
+            if (s.Length > 0)
+            {
+                int sId = Random.Range(0, s.Length);
+                c.sr.sprite = s[sId];
+
+            }
             Cookie newCookie = Instantiate(c);
             newCookie.gameObject.transform.position = this.gameObject.transform.position;
             //Debug.Log(newCookie);

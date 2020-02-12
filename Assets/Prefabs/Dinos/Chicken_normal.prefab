@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1529216897336063852}
   - component: {fileID: -6344671406662333010}
   - component: {fileID: -2580633171334110044}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chicken_normal
   m_TagString: Dino
   m_Icon: {fileID: 0}
@@ -98,10 +98,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18856406, y: 0.3771515}
+  m_Offset: {x: 0, y: 4.406785}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4815692, y: 0.22318101}
     oldSize: {x: 21.371428, y: 18.699999}
     newSize: {x: 21.371428, y: 18.699999}
     adaptiveTilingThreshold: 0.5
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.228333, y: 7.5740986}
+  m_Size: {x: 7, y: 3.9091854}
   m_EdgeRadius: 0
 --- !u!114 &3855527080243855002
 MonoBehaviour:

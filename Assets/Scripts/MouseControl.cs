@@ -50,6 +50,7 @@ public class MouseControl : MonoBehaviour
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;
             holdingCookie.gameObject.transform.position = pz;
+            holdingCookie.FixFlip();
         }
         
     }

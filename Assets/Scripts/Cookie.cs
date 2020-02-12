@@ -13,11 +13,18 @@ public class Cookie : MonoBehaviour
     public float bakeTime = 12f;
     public float burntTime = 24f;
     public float cookTimer = 0f;
+    public SpriteRenderer sr;
+    public Rigidbody2D rb2d;
+    public GameObject cookieChip;
+    public float attackDamage;
+    float attackTimer = 0.0f;
+    public float attackDelay;
     //SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb2d.freezeRotation = true;
+        mvmnt.StartMoving();
     }
 
     private void FixedUpdate()
@@ -39,9 +46,41 @@ public class Cookie : MonoBehaviour
         }
     }
 
+    public void FixFlip()
+    {
+        Debug.Log("fix flip" + Input.mousePosition.x);
+        if (gameObject.transform.position.x < 0)
+        {
+            mvmnt.Dir.x = -1;
+            sr.flipX = true;
+
+        }
+        else
+        {
+            mvmnt.Dir.x = 1;
+            sr.flipX = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if(isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip.GetComponent<CookieChip>())
+        {
+            if (attackTimer == 0.0f)
+            {
+                Instantiate(cookieChip, gameObject.transform);
+                attackTimer += Time.deltaTime;
+            }
+
+            if (attackTimer >= attackDelay)
+            {
+                attackTimer = 0.0f;
+            }
+            else
+            {
+                attackTimer += Time.deltaTime;
+            }
+        }
     }
 }
