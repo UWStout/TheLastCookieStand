@@ -852,7 +852,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697834031
 GameObject:
@@ -1038,7 +1038,7 @@ PrefabInstance:
     - target: {fileID: 532623862453524602, guid: c0e0c70bf1ce3674d9b3142b59df22bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 532623862453524602, guid: c0e0c70bf1ce3674d9b3142b59df22bc,
         type: 3}
@@ -1110,6 +1110,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1290575202}
+    - target: {fileID: 532623862453524601, guid: c0e0c70bf1ce3674d9b3142b59df22bc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 532623862453524601, guid: c0e0c70bf1ce3674d9b3142b59df22bc,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -779091059
+      objectReference: {fileID: 0}
     - target: {fileID: 532623862095091868, guid: c0e0c70bf1ce3674d9b3142b59df22bc,
         type: 3}
       propertyPath: m_IsActive
@@ -1212,7 +1222,7 @@ PrefabInstance:
     - target: {fileID: 6730315032304740568, guid: e351a71ad4cd101409e8f4274059522c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6730315032304740568, guid: e351a71ad4cd101409e8f4274059522c,
         type: 3}
@@ -1284,6 +1294,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1290575202}
+    - target: {fileID: 6730315032304740571, guid: e351a71ad4cd101409e8f4274059522c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -779091059
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730315032304740571, guid: e351a71ad4cd101409e8f4274059522c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6730315031976605579, guid: e351a71ad4cd101409e8f4274059522c,
         type: 3}
       propertyPath: m_Material
