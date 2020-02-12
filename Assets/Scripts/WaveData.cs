@@ -19,7 +19,7 @@ public class WaveData : ScriptableObject
         }
     }
 
-    #region PUBLIC_VERIABLE
+#region PUBLIC_VERIABLE
     public EnemFreq[] EnemiesAndFrequency;
     public int numOfEnemies;
     public float timeBetweenSpawns;
@@ -28,5 +28,5 @@ public class WaveData : ScriptableObject
     public int moveSpeed;
     public Color color;
     public string colorName;*/
-    #endregion
+#endregion
 }

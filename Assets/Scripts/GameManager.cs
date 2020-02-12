@@ -25,7 +25,9 @@ public class GameManager : MonoBehaviour
     public int EnemiesTotal = 0;
     public int EnemiesLeftToSpawn = 0;
     
-
+    //Dialogue Controller
+    public GameObject Dialogue;
+    public DialogueSystem diaSys;
 
     private void Awake()
     {
@@ -44,10 +46,18 @@ public class GameManager : MonoBehaviour
         Debug.Log(mc);
     }
 
+    IEnumerator DialogueSetup(int conv)
+    {
+        yield return new WaitForSecondsRealtime(.25f);
+        Dialogue.SetActive(true);
+        diaSys.SetupDialogue(conv);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         //Temporary. The game should probably start out with some text based tutorialization.
+        StartCoroutine(DialogueSetup(0));
         es.SetupNewWave();
     }
 
