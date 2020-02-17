@@ -53,12 +53,12 @@ public class DinoBehavior : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
 
-        if (other.gameObject.tag.Equals("Cookie") && attackTimer == 0.0f)
+        if (other.gameObject.tag.Equals("Cookie") && attackTimer == 0.0f && (other.gameObject.GetComponent<Cookie>().isBaked || other.gameObject.GetComponent<Cookie>().isBurnt))
         {
             other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage);
             attackTimer += Time.deltaTime;
         }
-        else if (other.gameObject.tag.Equals("Cookie"))
+        else if (other.gameObject.tag.Equals("Cookie") && (other.gameObject.GetComponent<Cookie>().isBaked || other.gameObject.GetComponent<Cookie>().isBurnt))
         {
             attackTimer += Time.deltaTime;
         }

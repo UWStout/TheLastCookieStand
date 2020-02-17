@@ -18,7 +18,7 @@ public class CookieBakeUI : MonoBehaviour
     void Update()
     {
         this.gameObject.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, c.gameObject.transform.position);
-        //Debug.Log(c);
+        Debug.Log(c);
         if (c.currTile != null && !c.currTile.tileType.Equals("Oven"))
         {
             imgCooldown.fillAmount = 0;
