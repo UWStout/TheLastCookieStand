@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour {
+public class UIBar : MonoBehaviour {
     public GameObject tower;
 
     public Image fill;
@@ -27,9 +27,10 @@ public class HealthBar : MonoBehaviour {
 
     public bool flashChanged;
 
-    private float midHealth;
+    public float max;
+    public float current;
 
-    Health towerStats;
+    private float midHealth;
     //EnemyMovement bossStats;
     public Slider hb;
 
@@ -40,18 +41,13 @@ public class HealthBar : MonoBehaviour {
         midHealth = (100 - lowHealthFlash) / 2;
     }
 
-    void Update()
+    public void UpdateHealthBar()
     {
         if (true)//(Time.unscaledDeltaTime < 0.25f)
         {
-            towerStats = tower.GetComponent<Health>();
-            if (towerStats != null)
-            {
-                PlayerHealth = (float)(towerStats.health / towerStats.maxHealth) * 100f;
-                LastPlayerHealth += (PlayerHealth - LastPlayerHealth) * ChangeSpeed * Time.unscaledDeltaTime;
-                HealthToShow = LastPlayerHealth;
-
-            }
+            PlayerHealth = (float)(current / max) * 100f;
+            LastPlayerHealth += (PlayerHealth - LastPlayerHealth) * ChangeSpeed * Time.unscaledDeltaTime;
+            HealthToShow = LastPlayerHealth;
 
             hb.value = HealthToShow;
 
@@ -85,6 +81,12 @@ public class HealthBar : MonoBehaviour {
                 fill.color = Color.Lerp(minHealthColor, Color.white, flashTimer / flashAdjustment);
             }
         }
+    }
+
+
+    void Update()
+    {
+
     }
 
 

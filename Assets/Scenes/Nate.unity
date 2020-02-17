@@ -2429,7 +2429,7 @@ MonoBehaviour:
   EnemiesLeftAlive: 0
   EnemiesTotal: 0
   EnemiesLeftToSpawn: 0
-  Dialogue: {fileID: 1139693691}
+  DialogueObject: {fileID: 1139693691}
   diaSys: {fileID: 1571046440}
 --- !u!114 &1610792973
 MonoBehaviour:

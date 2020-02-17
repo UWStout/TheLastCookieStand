@@ -817,7 +817,7 @@ MonoBehaviour:
   EnemiesLeftAlive: 0
   EnemiesTotal: 0
   EnemiesLeftToSpawn: 0
-  Dialogue: {fileID: 272881212}
+  DialogueObject: {fileID: 272881212}
   diaSys: {fileID: 1747686707}
 --- !u!81 &270712099
 AudioListener:

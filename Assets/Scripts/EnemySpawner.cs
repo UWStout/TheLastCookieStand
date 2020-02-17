@@ -51,6 +51,7 @@ public class EnemySpawner : MonoBehaviour
     {
         //Tells the game manager how many enemies to expect.
         GameManager.instance.EnemiesLeftToSpawn = Waves[GameManager.instance.CurrentWave].numOfEnemies;
+        GameManager.instance.EnemiesTotal = Waves[GameManager.instance.CurrentWave].numOfEnemies;
         //Gets a time between each dino.
         timeBetweenSpawns = Waves[GameManager.instance.CurrentWave].timeBetweenSpawns;
         //Makes a new list to keep track of enemies.
@@ -66,6 +67,7 @@ public class EnemySpawner : MonoBehaviour
         //Makes a temporary version to remove stuff some for randomization purposes.
         EnemyListTemp = new List<GameObject>(EnemyList);
         SpawnLocationList = new List<Vector2>(spawnLocationsArray);
+
 
     }
 
