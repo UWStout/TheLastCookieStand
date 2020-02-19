@@ -165,7 +165,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f76ccd15dde1a2a4cb81ec0891a02782, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cb160716698cea4e85c772405d4074d, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -264,7 +264,7 @@ SpriteRenderer:
   m_SortingLayerID: 910534849
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c242c81d76583e4cb2893ea2e9c92dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f52b63033fb17240920de20cbd83e30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -301,7 +301,6 @@ MonoBehaviour:
     type: 3}
   attackDamage: 0
   attackDelay: 3
-  burntCookie: {fileID: 21300000, guid: 563ca299427c03c4ab713cfff249bc6c, type: 3}
 --- !u!61 &7798117972511257127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -317,8 +316,8 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 2.4681818, y: 0.4681818, z: 2.4681818, w: 0.43181816}
-    pivot: {x: 0.51184833, y: 0.5210638}
+    border: {x: 3.8590908, y: 0.20454545, z: 1.090909, w: 0.7090909}
+    pivot: {x: 0.6658769, y: 0.45787263}
     oldSize: {x: 8.727273, y: 4.909091}
     newSize: {x: 4.13, y: 4.15}
     adaptiveTilingThreshold: 0.5
@@ -340,7 +339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6078d0ea2b429c4dab426e3bd7c33fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   maxHealth: 10
+=======
+  maxHealth: 0
+>>>>>>> 42441d981c95139574b4d943d195ea7111b71b6f
   health: 10
 --- !u!114 &7880834613784418529
 MonoBehaviour:

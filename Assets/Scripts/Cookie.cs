@@ -19,6 +19,8 @@ public class Cookie : MonoBehaviour
     public float attackDamage;
     float attackTimer = 0.0f;
     public float attackDelay;
+    public Sprite burntCookie;
+    public float healPower = 0.0f;
     //SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class Cookie : MonoBehaviour
             {
                 Debug.Log("Burnt");
                 isBurnt = true;
+                TurnToBurnt();
             }
             else if (cookTimer >= bakeTime)
             {
@@ -44,6 +47,16 @@ public class Cookie : MonoBehaviour
                 isBaked = true;
             }
         }
+    }
+
+    public void TurnToBurnt()
+    {
+        sr.sprite = burntCookie;
+        hlth.health = 30.0f;
+        mvmnt.MoveSpeed = 0.0f;
+        attackDamage = 0.0f;
+        cookieChip = null;
+        attackDelay = 0.0f;
     }
 
     public void FixFlip()
@@ -65,7 +78,7 @@ public class Cookie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip.GetComponent<CookieChip>())
+        if(isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip != null && cookieChip.GetComponent<CookieChip>())
         {
             if (attackTimer == 0.0f)
             {
