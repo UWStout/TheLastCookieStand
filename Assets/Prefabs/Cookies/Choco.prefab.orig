@@ -165,7 +165,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f76ccd15dde1a2a4cb81ec0891a02782, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cb160716698cea4e85c772405d4074d, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -204,7 +204,6 @@ GameObject:
   - component: {fileID: 7279306174839506992}
   - component: {fileID: 7880834613784418529}
   - component: {fileID: 3134808902753767106}
-  - component: {fileID: 5379633369842781892}
   m_Layer: 2
   m_Name: Choco
   m_TagString: Cookie
@@ -221,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 5642973709009036553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.59, y: -5.02, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.307}
+  m_LocalScale: {x: 0.307, y: 0.307, z: 0.307}
   m_Children:
   - {fileID: 5642973708017214850}
   m_Father: {fileID: 0}
@@ -265,7 +264,7 @@ SpriteRenderer:
   m_SortingLayerID: 910534849
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3af8cc9701594824e9830dbe58a79548, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f52b63033fb17240920de20cbd83e30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,8 +301,6 @@ MonoBehaviour:
     type: 3}
   attackDamage: 0
   attackDelay: 3
-  burntCookie: {fileID: 21300000, guid: 563ca299427c03c4ab713cfff249bc6c, type: 3}
-  healPower: 0
 --- !u!61 &7798117972511257127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -319,8 +316,8 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 3.8454545, y: 0.18181817, z: 1.1090909, w: 0.7181818}
-    pivot: {x: 0.66710716, y: 0.45636117}
+    border: {x: 3.8590908, y: 0.20454545, z: 1.090909, w: 0.7090909}
+    pivot: {x: 0.6658769, y: 0.45787263}
     oldSize: {x: 8.727273, y: 4.909091}
     newSize: {x: 4.13, y: 4.15}
     adaptiveTilingThreshold: 0.5
@@ -342,7 +339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6078d0ea2b429c4dab426e3bd7c33fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   maxHealth: 10
+=======
+  maxHealth: 0
+>>>>>>> 42441d981c95139574b4d943d195ea7111b71b6f
   health: 10
 --- !u!114 &7880834613784418529
 MonoBehaviour:
@@ -379,19 +380,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5379633369842781892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5642973709009036553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0ab2d58e3f1ef46ba2eba24db23eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  temp: 0
-  temp2: 0
-  ypos: 0
-  startSize: {x: 0, y: 0, z: 0}

@@ -18,6 +18,7 @@ public class CookieBakeUI : MonoBehaviour
     void Update()
     {
         this.gameObject.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, c.gameObject.transform.position);
+        Debug.Log(gameObject.name);
         Debug.Log(c);
         if (c.currTile != null && !c.currTile.tileType.Equals("Oven"))
         {
@@ -31,6 +32,10 @@ public class CookieBakeUI : MonoBehaviour
         {
             imgCooldown.color = Color.red;
             imgCooldown.fillAmount = (c.cookTimer - c.bakeTime) / (c.burntTime - c.bakeTime);
+        }
+        else
+        {
+            imgCooldown.fillAmount = 0;
         }
         
         if(c.currTile == null && (c.isBaked || c.isBurnt))

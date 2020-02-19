@@ -19,6 +19,8 @@ public class Cookie : MonoBehaviour
     public float attackDamage;
     float attackTimer = 0.0f;
     public float attackDelay;
+    public Sprite burntCookie;
+    public float healPower = 0.0f;
     //SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class Cookie : MonoBehaviour
             {
                 Debug.Log("Burnt");
                 isBurnt = true;
+                TurnToBurnt();
             }
             else if (cookTimer >= bakeTime)
             {
@@ -46,9 +49,19 @@ public class Cookie : MonoBehaviour
         }
     }
 
+    public void TurnToBurnt()
+    {
+        sr.sprite = burntCookie;
+        hlth.health = 30.0f;
+        mvmnt.MoveSpeed = 0.0f;
+        attackDamage = 0.0f;
+        cookieChip = null;
+        attackDelay = 0.0f;
+    }
+
     public void FixFlip()
     {
-        Debug.Log("fix flip" + Input.mousePosition.x);
+        //Debug.Log("fix flip" + Input.mousePosition.x);
         if (gameObject.transform.position.x < 0)
         {
             mvmnt.Dir.x = -1;
@@ -65,7 +78,7 @@ public class Cookie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip.GetComponent<CookieChip>())
+        if (isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip != null && cookieChip.GetComponent<CookieChip>())
         {
             if (attackTimer == 0.0f)
             {
@@ -82,5 +95,57 @@ public class Cookie : MonoBehaviour
                 attackTimer += Time.deltaTime;
             }
         }
+
+        /*
+        if (attackDamage != 0.0f)
+        {
+            if (attackTimer == 0.0f)
+            {
+                Instantiate(cookieChip, gameObject.transform);
+                attackTimer += Time.deltaTime;
+            }
+
+            if (attackTimer >= attackDelay)
+            {
+                attackTimer = 0.0f;
+            }
+            else
+            {
+                attackTimer += Time.deltaTime;
+            }
+        }
+        */
+
+        if(healPower != 0.0f)
+        {
+            if (attackTimer == 0.0f)
+            {
+                //Instantiate(cookieChip, gameObject.transform);
+                GameObject[] cookies = GameObject.FindGameObjectsWithTag("Cookie");
+
+                foreach(GameObject g in cookies)
+                {
+                    Vector3 diff = g.transform.position - transform.position;
+                    float curDist = diff.sqrMagnitude;
+                    if(curDist < 5.6f*5.6f)
+                    {
+                        g.GetComponent<Health>().AddHealth(healPower);
+                    }
+                }
+                attackTimer += Time.deltaTime;
+            }
+
+            if (attackTimer >= attackDelay)
+            {
+                attackTimer = 0.0f;
+            }
+            else
+            {
+                attackTimer += Time.deltaTime;
+            }
+        }
     }
+
+    
+
 }

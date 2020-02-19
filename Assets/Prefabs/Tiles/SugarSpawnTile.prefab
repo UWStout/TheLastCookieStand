@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &522073827683922818
+--- !u!1 &3355275770554699416
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 522073827683922830}
-  - component: {fileID: 522073827683922817}
-  - component: {fileID: 522073827683922816}
-  - component: {fileID: 522073827683922819}
+  - component: {fileID: 3355275770554699412}
+  - component: {fileID: 3355275770554699419}
+  - component: {fileID: 3355275770554699418}
+  - component: {fileID: 3355275770554699417}
   m_Layer: 0
-  m_Name: ChocoSpawnTile
+  m_Name: SugarSpawnTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &522073827683922830
+--- !u!4 &3355275770554699412
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522073827683922818}
+  m_GameObject: {fileID: 3355275770554699416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.97, y: 2.15, z: 0}
+  m_LocalPosition: {x: -6.67, y: 2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &522073827683922817
+--- !u!212 &3355275770554699419
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522073827683922818}
+  m_GameObject: {fileID: 3355275770554699416}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -1023335847
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ce1f33f13902df4fac3760b71006ed3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a412c330d8542a642803d83ff341ea11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,13 +82,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &522073827683922816
+--- !u!61 &3355275770554699418
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522073827683922818}
+  m_GameObject: {fileID: 3355275770554699416}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6836363, y: 1.7381818}
+    oldSize: {x: 4.63, y: 4.78}
     newSize: {x: 1.04, y: 1.03}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -108,21 +108,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.04, y: 1.03}
   m_EdgeRadius: 0
---- !u!114 &522073827683922819
+--- !u!114 &3355275770554699417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522073827683922818}
+  m_GameObject: {fileID: 3355275770554699416}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e09ff42b856501847bd9d97a39872c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tileType: Cookie
-  c: {fileID: 5642973709009036554, guid: c71fc4c3d33ec2b4886939a21643a401, type: 3}
-  s:
-  - {fileID: 21300000, guid: 9f52b63033fb17240920de20cbd83e30, type: 3}
-  - {fileID: 21300000, guid: 3af8cc9701594824e9830dbe58a79548, type: 3}
-  - {fileID: 21300000, guid: 5c242c81d76583e4cb2893ea2e9c92dd, type: 3}
+  c: {fileID: 87142695883938382, guid: 2d779996a68974049a2a34b4cad03559, type: 3}
+  s: []
