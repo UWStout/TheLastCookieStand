@@ -44,7 +44,7 @@ public class DinoBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Cookie"))
+        if (collision.gameObject.tag.Equals("Cookie")||collision.gameObject.tag.Equals("Tower"))
         {
             mvmnt.StopMoving();
         }
@@ -62,6 +62,13 @@ public class DinoBehavior : MonoBehaviour
         {
             attackTimer += Time.deltaTime;
         }
+        else if (other.gameObject.tag.Equals("Tower"))
+        {
+            other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage);
+            attackTimer += Time.deltaTime;
+
+        }
+
 
         if(attackTimer >= attackDelay)
         {

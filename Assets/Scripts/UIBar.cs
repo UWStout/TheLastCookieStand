@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class UIBar : MonoBehaviour {
-    public GameObject tower;
 
     public Image fill;
 

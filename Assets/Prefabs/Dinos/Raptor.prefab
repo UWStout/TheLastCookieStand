@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2838485105209481775}
   - component: {fileID: -8026662101011986030}
   - component: {fileID: 6749331924943266387}
+  - component: {fileID: 6413025368870994065}
   m_Layer: 2
   m_Name: Raptor
   m_TagString: Dino
@@ -178,3 +179,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.3923244, y: 5.0672774}
   m_EdgeRadius: 0
+--- !u!114 &6413025368870994065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281497706868137833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1933f4b10cf5aac43a350a09b539df9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topHeight: 1
+  bottomHeight: -5
+  maxSize: 1
+  minSize: 0.5
+  temp: 0
+  temp2: 0
+  ypos: 0
