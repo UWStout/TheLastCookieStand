@@ -297,6 +297,9 @@ MonoBehaviour:
   cookTimer: 0
   sr: {fileID: 3210913270487419585}
   rb2d: {fileID: 5278709408513745160}
+  cookieChip: {fileID: 0}
+  attackDamage: 0
+  attackDelay: 0
 --- !u!61 &1078841708528590317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -335,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6078d0ea2b429c4dab426e3bd7c33fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   health: 20
 --- !u!114 &1125604654040659755
 MonoBehaviour:
