@@ -62,7 +62,7 @@ public class DinoBehavior : MonoBehaviour
         {
             attackTimer += Time.deltaTime;
         }
-        else if (other.gameObject.tag.Equals("Tower"))
+        else if (other.gameObject.tag.Equals("Tower")&& attackTimer == 0.0f)
         {
             other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage);
             attackTimer += Time.deltaTime;

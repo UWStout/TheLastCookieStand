@@ -466,7 +466,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: b40965e09ffd4ec4ab55869d7b795dc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3924,6 +3924,7 @@ MonoBehaviour:
   mc: {fileID: 0}
   es: {fileID: 1697834032}
   pc: {fileID: 706466393}
+  TowerHealth: {fileID: 890536622}
   state: 0
   CurrentWave: 0
   LevelSetup:

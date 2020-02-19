@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public MouseControl mc;
     public EnemySpawner es;
     public PauseManager pc;
+    public Health TowerHealth;
 
 
     //States so the manager can behave differently.
@@ -73,6 +74,33 @@ public class GameManager : MonoBehaviour
     }
 
 
+
+    public void BoardWipe()
+    {
+        TowerHealth.health=TowerHealth.maxHealth;
+        GameObject[] stuffToKill=GameObject.FindGameObjectsWithTag ("Dino");
+        for(var i = 0 ; i < stuffToKill.Length; i ++)
+            Destroy(stuffToKill[i]);
+        GameObject[] stuffToKill2=GameObject.FindGameObjectsWithTag ("CookieChip");
+        for(var i = 0 ; i < stuffToKill2.Length; i ++)
+            Destroy(stuffToKill2[i]);
+        GameObject[] stuffToKill3=GameObject.FindGameObjectsWithTag ("Cookie");
+        for(var i = 0 ; i < stuffToKill3.Length; i ++)
+            Destroy(stuffToKill3[i]);
+
+
+    }
+
+    public void Death()
+    {
+        CurrentWave-=1;
+        BoardWipe();
+        NewLevel();
+
+    }
+
+
+
     public void BootToMainMenu()
     {
         pc.MainMenu();
@@ -81,6 +109,7 @@ public class GameManager : MonoBehaviour
 
     void NewLevel()
     {
+        BoardWipe();
         if(CurrentWave>=0)
         {
             LevelSetup[CurrentWave].SetActive(false);
@@ -97,6 +126,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+
+
+
         if(state==(int)STATES.EnemiesLeft&&EnemiesLeftAlive==0&&EnemiesLeftToSpawn==0)
         {
 
@@ -111,6 +146,10 @@ public class GameManager : MonoBehaviour
         {
             state=(int)STATES.EnemiesLeft;
 
+        }
+        else if(TowerHealth.health<=0)
+        {
+            Death();
         }
 
     }
