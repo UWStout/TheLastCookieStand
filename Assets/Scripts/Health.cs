@@ -19,7 +19,12 @@ public class Health : MonoBehaviour
 
     public void AddHealth(float heal)
     {
+        
         health += heal;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
     }
 
     // Update is called once per frame

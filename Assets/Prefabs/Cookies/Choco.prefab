@@ -265,7 +265,7 @@ SpriteRenderer:
   m_SortingLayerID: 910534849
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c242c81d76583e4cb2893ea2e9c92dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3af8cc9701594824e9830dbe58a79548, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -303,6 +303,7 @@ MonoBehaviour:
   attackDamage: 0
   attackDelay: 3
   burntCookie: {fileID: 21300000, guid: 563ca299427c03c4ab713cfff249bc6c, type: 3}
+  healPower: 0
 --- !u!61 &7798117972511257127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -318,8 +319,8 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 2.4681818, y: 0.4681818, z: 2.4681818, w: 0.43181816}
-    pivot: {x: 0.51184833, y: 0.5210638}
+    border: {x: 3.8454545, y: 0.18181817, z: 1.1090909, w: 0.7181818}
+    pivot: {x: 0.66710716, y: 0.45636117}
     oldSize: {x: 8.727273, y: 4.909091}
     newSize: {x: 4.13, y: 4.15}
     adaptiveTilingThreshold: 0.5

@@ -61,7 +61,7 @@ public class Cookie : MonoBehaviour
 
     public void FixFlip()
     {
-        Debug.Log("fix flip" + Input.mousePosition.x);
+        //Debug.Log("fix flip" + Input.mousePosition.x);
         if (gameObject.transform.position.x < 0)
         {
             mvmnt.Dir.x = -1;
@@ -78,7 +78,7 @@ public class Cookie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip != null && cookieChip.GetComponent<CookieChip>())
+        if (isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip != null && cookieChip.GetComponent<CookieChip>())
         {
             if (attackTimer == 0.0f)
             {
@@ -95,5 +95,57 @@ public class Cookie : MonoBehaviour
                 attackTimer += Time.deltaTime;
             }
         }
+
+        /*
+        if (attackDamage != 0.0f)
+        {
+            if (attackTimer == 0.0f)
+            {
+                Instantiate(cookieChip, gameObject.transform);
+                attackTimer += Time.deltaTime;
+            }
+
+            if (attackTimer >= attackDelay)
+            {
+                attackTimer = 0.0f;
+            }
+            else
+            {
+                attackTimer += Time.deltaTime;
+            }
+        }
+        */
+
+        if(healPower != 0.0f)
+        {
+            if (attackTimer == 0.0f)
+            {
+                //Instantiate(cookieChip, gameObject.transform);
+                GameObject[] cookies = GameObject.FindGameObjectsWithTag("Cookie");
+
+                foreach(GameObject g in cookies)
+                {
+                    Vector3 diff = g.transform.position - transform.position;
+                    float curDist = diff.sqrMagnitude;
+                    if(curDist < 5.6f*5.6f)
+                    {
+                        g.GetComponent<Health>().AddHealth(healPower);
+                    }
+                }
+                attackTimer += Time.deltaTime;
+            }
+
+            if (attackTimer >= attackDelay)
+            {
+                attackTimer = 0.0f;
+            }
+            else
+            {
+                attackTimer += Time.deltaTime;
+            }
+        }
     }
+
+    
+
 }
