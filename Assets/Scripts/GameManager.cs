@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        //Commenting out this don't destroy on load thing.
+        //DontDestroyOnLoad(gameObject);
 
         Debug.Log("Yes?");
 
