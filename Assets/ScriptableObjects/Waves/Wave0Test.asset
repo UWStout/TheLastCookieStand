@@ -15,5 +15,5 @@ MonoBehaviour:
   EnemiesAndFrequency:
   - Enemy: {fileID: 8281497706868137833, guid: 1799eb234b105074193789e3aa6a61b5, type: 3}
     Frequency: 1
-  numOfEnemies: 10
-  timeBetweenSpawns: 3
+  numOfEnemies: 6
+  timeBetweenSpawns: 5

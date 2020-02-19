@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8196077090166160279}
   - component: {fileID: 8196077090166160278}
   - component: {fileID: 8196077090166160277}
+  - component: {fileID: -8309393292824178728}
   m_Layer: 2
   m_Name: CookieChip
   m_TagString: CookieChip
@@ -125,7 +126,7 @@ MonoBehaviour:
   mvmnt: {fileID: 8196077090166160278}
   sr: {fileID: 8196077090166160297}
   rb2d: {fileID: 8196077090166160277}
-  attackDamage: 1000
+  attackDamage: 2
 --- !u!114 &8196077090166160278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dir: {x: 1, y: 0}
-  MoveSpeed: 10
+  MoveSpeed: 20
 --- !u!50 &8196077090166160277
 Rigidbody2D:
   serializedVersion: 4
@@ -161,3 +162,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8309393292824178728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196077090166160276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1933f4b10cf5aac43a350a09b539df9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: 0
+  temp2: 0
+  ypos: 0
