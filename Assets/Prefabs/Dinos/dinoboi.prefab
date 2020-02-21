@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3012606659764382244}
   - component: {fileID: 7718451695579602263}
   - component: {fileID: -9119040858698495043}
+  - component: {fileID: 2251111592726750495}
   m_Layer: 2
   m_Name: dinoboi
   m_TagString: Dino
@@ -98,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25610924, y: 4.0976295}
+  m_Offset: {x: -0.25610924, y: 2.7190993}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.49078465, y: 0.04127908}
@@ -109,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.394869, y: 4.653555}
+  m_Size: {x: 6.394869, y: 4.4880166}
   m_EdgeRadius: 0
 --- !u!50 &3135202819476929785
 Rigidbody2D:
@@ -148,8 +149,11 @@ MonoBehaviour:
   mvmnt: {fileID: -9119040858698495043}
   sr: {fileID: 993426767454508305}
   rb2d: {fileID: 3135202819476929785}
-  attackDamage: 0
-  attackDelay: 0
+  attackDamage: 4
+  attackTimer: 0
+  attackDelay: 1.5
+  armorWeakness: 0.5
+  whatImHitting: {fileID: 0}
 --- !u!114 &7718451695579602263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   health: 30
+  DestroyOnDeath: 1
 --- !u!114 &-9119040858698495043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +183,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dir: {x: 1, y: 0}
   MoveSpeed: 0.1
+  moveOnStart: 0
+--- !u!114 &2251111592726750495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166328193807909128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1933f4b10cf5aac43a350a09b539df9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: 0
+  temp2: 0
+  ypos: 0
+  sr: {fileID: 0}

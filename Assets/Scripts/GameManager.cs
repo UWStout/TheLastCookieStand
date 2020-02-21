@@ -87,6 +87,10 @@ public class GameManager : MonoBehaviour
         GameObject[] stuffToKill3=GameObject.FindGameObjectsWithTag ("Cookie");
         for(var i = 0 ; i < stuffToKill3.Length; i ++)
             Destroy(stuffToKill3[i]);
+        GameObject[] stuffToKill4=GameObject.FindGameObjectsWithTag ("UncookedCookie");
+        for(var i = 0 ; i < stuffToKill4.Length; i ++)
+            Destroy(stuffToKill4[i]);
+
 
 
     }
@@ -112,11 +116,13 @@ public class GameManager : MonoBehaviour
         BoardWipe();
         if(CurrentWave>=0)
         {
-            LevelSetup[CurrentWave].SetActive(false);
+            //We can disable this to do additive waves.
+            //LevelSetup[CurrentWave].SetActive(false);
         }
         CurrentWave+=1;
         LevelSetup[CurrentWave].SetActive(true);
         StartCoroutine(DialogueSetup(CurrentWave));
+        state=(int)STATES.NoEnemiesLeft;
         es.SetupNewWave();
 
     }
@@ -147,8 +153,9 @@ public class GameManager : MonoBehaviour
             state=(int)STATES.EnemiesLeft;
 
         }
-        else if(TowerHealth.health<=0)
+        if(TowerHealth.health<=0)
         {
+            Debug.Log("Death");
             Death();
         }
 

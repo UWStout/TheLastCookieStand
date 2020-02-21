@@ -23,6 +23,8 @@ public class WaveData : ScriptableObject
     public EnemFreq[] EnemiesAndFrequency;
     public int numOfEnemies;
     public float timeBetweenSpawns;
+    public float timeBetweenSpawnsEnd;
+    public Vector2[] spawnLocationsArray;
     /*
     public string name;
     public int moveSpeed;

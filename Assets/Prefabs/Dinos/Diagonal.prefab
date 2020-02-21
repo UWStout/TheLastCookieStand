@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4260022838833448705}
   - component: {fileID: 5628776523045760489}
   - component: {fileID: 1179696677700820399}
+  - component: {fileID: 684211091063622242}
   m_Layer: 2
   m_Name: Diagonal
   m_TagString: Dino
@@ -125,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dir: {x: 1, y: 0}
   MoveSpeed: 0.2
+  moveOnStart: 0
 --- !u!114 &-4260022838833448705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 13
   health: 13
+  DestroyOnDeath: 1
 --- !u!50 &5628776523045760489
 Rigidbody2D:
   serializedVersion: 4
@@ -178,3 +181,20 @@ MonoBehaviour:
   rb2d: {fileID: 5628776523045760489}
   attackDamage: 0
   attackDelay: 0
+--- !u!114 &684211091063622242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300977446092033291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0ab2d58e3f1ef46ba2eba24db23eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: 0
+  temp2: 0
+  ypos: 0
+  startSize: {x: 0, y: 0, z: 0}
+  sr: {fileID: 0}

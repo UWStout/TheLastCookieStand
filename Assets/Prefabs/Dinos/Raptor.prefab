@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6078d0ea2b429c4dab426e3bd7c33fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  health: 15
+  maxHealth: 10
+  health: 10
+  DestroyOnDeath: 1
 --- !u!114 &-1152472016560440524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dir: {x: 1, y: 0}
   MoveSpeed: 0.2
+  moveOnStart: 0
 --- !u!50 &2838485105209481775
 Rigidbody2D:
   serializedVersion: 4
@@ -151,8 +153,11 @@ MonoBehaviour:
   mvmnt: {fileID: -1152472016560440524}
   sr: {fileID: 6108523141847856520}
   rb2d: {fileID: 2838485105209481775}
-  attackDamage: 1.5
+  attackDamage: 3
+  attackTimer: 0
   attackDelay: 1
+  armorWeakness: 0.5
+  whatImHitting: {fileID: 0}
 --- !u!61 &6749331924943266387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,7 +171,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2755413, y: 3.4515762}
+  m_Offset: {x: -0.2755413, y: 2.5027897}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.46972087, y: 0.3104392}
@@ -177,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.1341324, y: 5.872526}
+  m_Size: {x: 5.1341324, y: 3.9749532}
   m_EdgeRadius: 0
 --- !u!114 &6413025368870994065
 MonoBehaviour:
@@ -194,3 +199,4 @@ MonoBehaviour:
   temp: 0
   temp2: 0
   ypos: 0
+  sr: {fileID: 0}

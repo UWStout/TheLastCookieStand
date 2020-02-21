@@ -11,6 +11,7 @@ public class PauseManager : MonoBehaviour
     public Sprite pauseSprite;
     public Sprite playSprite;
     public string mainMenu;
+    public GameObject fastButton;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class PauseManager : MonoBehaviour
             pauseButton.sprite=pauseSprite;
             isPaused = false;
             pauseMenu.SetActive(false);
+            fastButton.SetActive(true);
             Time.timeScale = 1;
         }
         else
@@ -40,6 +42,7 @@ public class PauseManager : MonoBehaviour
             isPaused = true;
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
+            fastButton.SetActive(false);
         }
     }
 

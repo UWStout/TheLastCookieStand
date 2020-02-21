@@ -126,7 +126,7 @@ MonoBehaviour:
   mvmnt: {fileID: 8196077090166160278}
   sr: {fileID: 8196077090166160297}
   rb2d: {fileID: 8196077090166160277}
-  attackDamage: 2
+  attackDamage: 1
 --- !u!114 &8196077090166160278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dir: {x: 1, y: 0}
   MoveSpeed: 20
+  moveOnStart: 0
 --- !u!50 &8196077090166160277
 Rigidbody2D:
   serializedVersion: 4
@@ -177,3 +178,4 @@ MonoBehaviour:
   temp: 0
   temp2: 0
   ypos: 0
+  sr: {fileID: 0}

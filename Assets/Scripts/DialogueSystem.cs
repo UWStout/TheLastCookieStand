@@ -86,7 +86,7 @@ public class DialogueSystem : MonoBehaviour
         }
 
 
-        Debug.Log("Current Line is: " + currentLine);
+        //Debug.Log("Current Line is: " + currentLine);
 
         hasPlayedAudio = true;
     }

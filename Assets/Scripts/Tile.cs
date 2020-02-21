@@ -60,6 +60,7 @@ public class Tile : MonoBehaviour
         {
             GameManager.instance.mc.holdingCookie.currTile = this;
             cookieOnTile = GameManager.instance.mc.holdingCookie;
+            GameManager.instance.mc.holdingCookie.gameObject.tag = "Cookie";
             GameManager.instance.mc.holdingCookie.gameObject.transform.position = this.gameObject.transform.position;
             GameManager.instance.mc.holdingCookie = null;
         }

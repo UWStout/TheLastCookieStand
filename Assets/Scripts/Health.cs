@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     public float maxHealth;
     public float health;
+    public bool DestroyOnDeath = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +31,10 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health<=0)
+        if (health<=0&&DestroyOnDeath)
         {
             Destroy(gameObject);
         }
+
     }
 }

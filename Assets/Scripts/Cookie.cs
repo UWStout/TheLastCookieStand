@@ -21,12 +21,16 @@ public class Cookie : MonoBehaviour
     public float attackDelay;
     public Sprite burntCookie;
     public float healPower = 0.0f;
+    public float healRange = 5.6f;
+    public float burntHealth = 30;
     //SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
         rb2d.freezeRotation = true;
         mvmnt.StartMoving();
+        burntTime+=bakeTime;
+        transform.gameObject.tag = "UncookedCookie";
     }
 
     private void FixedUpdate()
@@ -37,14 +41,15 @@ public class Cookie : MonoBehaviour
             
             if(cookTimer >= burntTime)
             {
-                Debug.Log("Burnt");
+                //Debug.Log("Burnt");
                 isBurnt = true;
                 TurnToBurnt();
             }
             else if (cookTimer >= bakeTime)
             {
-                Debug.Log("Baked");
+                //Debug.Log("Baked");
                 isBaked = true;
+
             }
         }
     }
@@ -52,7 +57,8 @@ public class Cookie : MonoBehaviour
     public void TurnToBurnt()
     {
         sr.sprite = burntCookie;
-        hlth.health = 30.0f;
+        hlth.health = burntHealth;
+        hlth.maxHealth = burntHealth;
         mvmnt.MoveSpeed = 0.0f;
         attackDamage = 0.0f;
         cookieChip = null;
@@ -80,6 +86,7 @@ public class Cookie : MonoBehaviour
     {
         if (isBaked && currTile != null && currTile.tileType.Equals("Tile") && cookieChip != null && cookieChip.GetComponent<CookieChip>())
         {
+
             if (attackTimer == 0.0f)
             {
                 Instantiate(cookieChip, gameObject.transform);
@@ -95,6 +102,7 @@ public class Cookie : MonoBehaviour
                 attackTimer += Time.deltaTime;
             }
         }
+
 
         /*
         if (attackDamage != 0.0f)
@@ -127,7 +135,7 @@ public class Cookie : MonoBehaviour
                 {
                     Vector3 diff = g.transform.position - transform.position;
                     float curDist = diff.sqrMagnitude;
-                    if(curDist < 5.6f*5.6f)
+                    if(curDist < healRange)
                     {
                         g.GetComponent<Health>().AddHealth(healPower);
                     }

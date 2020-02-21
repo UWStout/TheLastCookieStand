@@ -12,7 +12,9 @@ public class EnemySpawner : MonoBehaviour
     //Time between Spawns.
     public float timeTracker;
     public float timeBetweenSpawns;
+    public float timeBetweenSpawnsEnd;
     //Lists to select from for randomization reasons.
+    public List<Vector2> SpawnLocationListTemp;
     public List<Vector2> SpawnLocationList;
     public List<GameObject> EnemyList;
     public List<GameObject> EnemyListTemp;
@@ -41,7 +43,10 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 //we could also randomize this by adding or subtracting a random number to this.
-                timeTracker = timeBetweenSpawns;
+
+                float waveProg=((float)GameManager.instance.EnemiesLeftToSpawn/(float)GameManager.instance.EnemiesTotal);
+                timeTracker = (timeBetweenSpawns*(waveProg))+(timeBetweenSpawnsEnd*(1-waveProg));
+                //Debug.Log("waveProg= "+waveProg + "EnemiesLeftToSpawn= "+GameManager.instance.EnemiesLeftToSpawn+"EnemiesTotal+ "+GameManager.instance.EnemiesTotal);
                 PickWhatToSpawn();
             }
         }
@@ -54,6 +59,8 @@ public class EnemySpawner : MonoBehaviour
         GameManager.instance.EnemiesTotal = Waves[GameManager.instance.CurrentWave].numOfEnemies;
         //Gets a time between each dino.
         timeBetweenSpawns = Waves[GameManager.instance.CurrentWave].timeBetweenSpawns;
+        timeBetweenSpawnsEnd = Waves[GameManager.instance.CurrentWave].timeBetweenSpawnsEnd;
+        SpawnLocationList = new List<Vector2>(Waves[GameManager.instance.CurrentWave].spawnLocationsArray);
         //Makes a new list to keep track of enemies.
         EnemyList = new List<GameObject>();
         //Populates a list full of enemies with a number of each equal to their frequency.
@@ -66,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
         }
         //Makes a temporary version to remove stuff some for randomization purposes.
         EnemyListTemp = new List<GameObject>(EnemyList);
-        SpawnLocationList = new List<Vector2>(spawnLocationsArray);
+        SpawnLocationListTemp = new List<Vector2>(SpawnLocationList);
 
 
     }
@@ -88,13 +95,13 @@ public class EnemySpawner : MonoBehaviour
     void SpawnDino(GameObject dinosaur)
     {
         //Pulls a location from the list then removes it. Insuring even spread across lanes.
-        if (SpawnLocationList.Count==0)
+        if (SpawnLocationListTemp.Count==0)
         {
-            SpawnLocationList = new List<Vector2>(spawnLocationsArray);
+            SpawnLocationListTemp = new List<Vector2>(SpawnLocationList);
         }
-        int tempRand = Random.Range(0, SpawnLocationList.Count);
-        Vector2 tempLoc = SpawnLocationList[tempRand];
-        SpawnLocationList.RemoveAt(tempRand);
+        int tempRand = Random.Range(0, SpawnLocationListTemp.Count);
+        Vector2 tempLoc = SpawnLocationListTemp[tempRand];
+        SpawnLocationListTemp.RemoveAt(tempRand);
         //Makes a dino
         Instantiate(dinosaur, tempLoc, Quaternion.identity);
         //Tells the game manager stuff about how much longer the level goes for.

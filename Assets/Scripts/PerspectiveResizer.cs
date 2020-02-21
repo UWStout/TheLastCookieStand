@@ -11,6 +11,7 @@ public class PerspectiveResizer : MonoBehaviour
     public float temp;
     public float temp2;
     public float ypos;
+    public SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class PerspectiveResizer : MonoBehaviour
         temp=1-((ypos-bottomHeight)/(topHeight-bottomHeight));
         temp2=minSize+((maxSize-minSize)*temp);
         transform.localScale*=temp2;
-
+        sr=FindObjectOfType<SpriteRenderer>();
+        sr.sortingOrder = Mathf.CeilToInt((gameObject.transform.position.y*-1) +5);
 
     }
 

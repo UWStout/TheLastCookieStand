@@ -17,9 +17,9 @@ public class CookieBakeUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, c.gameObject.transform.position);
-        Debug.Log(gameObject.name);
-        Debug.Log(c);
+        //this.gameObject.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, c.gameObject.transform.position);
+        //Debug.Log(gameObject.name);
+        //Debug.Log(c);
         if (c.currTile != null && !c.currTile.tileType.Equals("Oven"))
         {
             imgCooldown.fillAmount = 0;

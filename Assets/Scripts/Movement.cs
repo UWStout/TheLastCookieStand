@@ -6,11 +6,16 @@ public class Movement : MonoBehaviour
 {
     public Vector2 Dir = new Vector2(1,0);
     public float MoveSpeed;
+    public bool moveOnStart = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //This is kind of hacky
+        if (moveOnStart)
+        {
+            StartMoving();
+        }
     }
 
     // Update is called once per frame

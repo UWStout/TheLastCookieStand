@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1818122315217692417}
   - component: {fileID: 1818122315217692416}
   - component: {fileID: 1818122315217692419}
+  - component: {fileID: 195044067}
   m_Layer: 0
   m_Name: OvenTile
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818122315217692418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -2.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,18 +96,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03945911, y: 0.019729361}
   m_SpriteTilingProperty:
-    border: {x: 5.98, y: 2.57, z: 7.0099998, w: 1.81}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 10.8}
+    border: {x: 0.99666667, y: 0.42833334, z: 1.1683334, w: 0.30166668}
+    pivot: {x: 0.47630337, y: 0.53276587}
+    oldSize: {x: 3.2, y: 1.8}
     newSize: {x: 1.04, y: 1.03}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.04, y: 1.03}
+  m_Size: {x: 0.7243271, y: 0.6748674}
   m_EdgeRadius: 0
 --- !u!114 &1818122315217692419
 MonoBehaviour:
@@ -122,3 +123,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: Oven
   c: {fileID: 3210913270487419584, guid: 2f249e27027ab664ba0a4b44ec75dc77, type: 3}
+  s: []
+--- !u!114 &195044067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818122315217692418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1933f4b10cf5aac43a350a09b539df9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: 0
+  temp2: 0
+  ypos: 0
+  sr: {fileID: 0}

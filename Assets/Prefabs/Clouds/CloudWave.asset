@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cea4d2b12f5ae47bcde396def73e3f, type: 3}
+  m_Name: CloudWave
+  m_EditorClassIdentifier: 
+  EnemiesAndFrequency:
+  - Enemy: {fileID: 8163477057775330396, guid: 37b5cdee6b310d64f8f9ee5d055e7f50, type: 3}
+    Frequency: 1
+  - Enemy: {fileID: 5777318078950076062, guid: 4722a36c3a066b54f97fa91496368d89, type: 3}
+    Frequency: 1
+  - Enemy: {fileID: 6217255343581590404, guid: 9e368442b3557514892cd9ac9319794b, type: 3}
+    Frequency: 1
+  - Enemy: {fileID: 7069862547506102825, guid: e1807273802e0094089a8883fb31c066, type: 3}
+    Frequency: 1
+  - Enemy: {fileID: 8524354374353438596, guid: 97535beac8c59b049afece245221e058, type: 3}
+    Frequency: 1
+  - Enemy: {fileID: 9023751692760391174, guid: 2df901cea4140de4e8e6da3f07616fc6, type: 3}
+    Frequency: 1
+  numOfEnemies: 0
+  timeBetweenSpawns: 60
+  timeBetweenSpawnsEnd: 0

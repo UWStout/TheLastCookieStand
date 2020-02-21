@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3013119914952235187}
   - component: {fileID: 3013119914952235184}
   - component: {fileID: 6107315376595643645}
+  - component: {fileID: 1882354494081874677}
   m_Layer: 2
   m_Name: DoubleCookieChip
   m_TagString: CookieChip
@@ -177,3 +178,15 @@ MonoBehaviour:
   temp: 0
   temp2: 0
   ypos: 0
+--- !u!114 &1882354494081874677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013119914952235185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcd92390a56d9945b4af60e1ed7f3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
