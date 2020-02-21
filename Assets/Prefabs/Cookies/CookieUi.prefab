@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0.405, g: 0.37657896, b: 0.37657896, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4571968107294243669}
   - component: {fileID: 4571968107294243666}
   m_Layer: 2
-  m_Name: Canvas
+  m_Name: CookieUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

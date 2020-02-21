@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7880834613784418529}
   - component: {fileID: 3134808902753767106}
   - component: {fileID: 5379633369842781892}
+  - component: {fileID: -6458138764121093411}
   m_Layer: 2
   m_Name: Choco
   m_TagString: Cookie
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 910534849
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25dff9772b88af94d9de33f81635cb45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8114ccadc7895854cb2ac221c731a16c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,8 +115,10 @@ MonoBehaviour:
   attackDamage: 0
   attackDelay: 3
   burntCookie: {fileID: 21300000, guid: 563ca299427c03c4ab713cfff249bc6c, type: 3}
+  bakedCookie: {fileID: 21300000, guid: 25dff9772b88af94d9de33f81635cb45, type: 3}
   healPower: 0
   healRange: 5.6
+  burntHealth: 30
 --- !u!61 &7798117972511257127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,7 +136,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.109091, y: 4.909091}
+    oldSize: {x: 9.26, y: 9.56}
     newSize: {x: 4.13, y: 4.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -210,6 +213,25 @@ MonoBehaviour:
   ypos: 0
   startSize: {x: 0, y: 0, z: 0}
   sr: {fileID: 0}
+--- !u!95 &-6458138764121093411
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642973709009036553}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 657f9864da7dbe940bd7f803f2996ec9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4900057205236425084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,21 +349,37 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4571968106937889729, guid: c9bf7395681734044b7fcc2dea7387ad,
+    - target: {fileID: 4571968106937889740, guid: c9bf7395681734044b7fcc2dea7387ad,
         type: 3}
-      propertyPath: c
-      value: 
-      objectReference: {fileID: 5642973709009036554}
-    - target: {fileID: 2506010434973904400, guid: c9bf7395681734044b7fcc2dea7387ad,
+      propertyPath: m_LocalScale.x
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571968106937889740, guid: c9bf7395681734044b7fcc2dea7387ad,
         type: 3}
-      propertyPath: healthStats
-      value: 
-      objectReference: {fileID: 7279306174839506992}
+      propertyPath: m_LocalScale.y
+      value: 1.84
+      objectReference: {fileID: 0}
     - target: {fileID: 5280246073169244407, guid: c9bf7395681734044b7fcc2dea7387ad,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2506010434973904400, guid: c9bf7395681734044b7fcc2dea7387ad,
+        type: 3}
+      propertyPath: healthStats
+      value: 
+      objectReference: {fileID: 7279306174839506992}
+    - target: {fileID: 4571968106937889743, guid: c9bf7395681734044b7fcc2dea7387ad,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8114ccadc7895854cb2ac221c731a16c,
+        type: 3}
+    - target: {fileID: 4571968106937889729, guid: c9bf7395681734044b7fcc2dea7387ad,
+        type: 3}
+      propertyPath: c
+      value: 
+      objectReference: {fileID: 5642973709009036554}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9bf7395681734044b7fcc2dea7387ad, type: 3}
 --- !u!224 &8895283076352301615 stripped

@@ -122,5 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: Cookie
   c: {fileID: 5642973709009036554, guid: c71fc4c3d33ec2b4886939a21643a401, type: 3}
-  s:
-  - {fileID: 21300000, guid: 25dff9772b88af94d9de33f81635cb45, type: 3}
+  s: []

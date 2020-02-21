@@ -19,7 +19,8 @@ public class Cookie : MonoBehaviour
     public float attackDamage;
     float attackTimer = 0.0f;
     public float attackDelay;
-    public Sprite burntCookie;
+    //public RuntimeAnimatorController burntCookie;
+    public Sprite bakedCookie;
     public float healPower = 0.0f;
     public float healRange = 5.6f;
     public float burntHealth = 30;
@@ -49,14 +50,16 @@ public class Cookie : MonoBehaviour
             {
                 //Debug.Log("Baked");
                 isBaked = true;
-
+                
+                //sr.sprite = bakedCookie;
             }
         }
     }
 
     public void TurnToBurnt()
     {
-        sr.sprite = burntCookie;
+        //sr.sprite = burntCookie;
+        gameObject.GetComponent<Animator>().Play("BurntCookie");
         hlth.health = burntHealth;
         hlth.maxHealth = burntHealth;
         mvmnt.MoveSpeed = 0.0f;

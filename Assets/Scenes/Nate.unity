@@ -177,7 +177,7 @@ Transform:
   - {fileID: 1888970825}
   - {fileID: 1359195295}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &78845522 stripped
 Transform:
@@ -1754,7 +1754,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1251565201
 PrefabInstance:
@@ -1875,7 +1875,7 @@ PrefabInstance:
     - target: {fileID: 6730315032304740568, guid: e351a71ad4cd101409e8f4274059522c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6730315032304740568, guid: e351a71ad4cd101409e8f4274059522c,
         type: 3}
@@ -2436,6 +2436,7 @@ MonoBehaviour:
   mc: {fileID: 1610792973}
   es: {fileID: 1610792974}
   pc: {fileID: 0}
+  TowerHealth: {fileID: 0}
   state: 0
   CurrentWave: 0
   LevelSetup: []
@@ -2482,6 +2483,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 216f5f497858d0b488e65cf04ddf3f2a, type: 2}
   timeTracker: 0
   timeBetweenSpawns: 4
+  timeBetweenSpawnsEnd: 0
+  SpawnLocationListTemp: []
   SpawnLocationList: []
   EnemyList: []
   EnemyListTemp: []
@@ -3543,7 +3546,7 @@ PrefabInstance:
     - target: {fileID: 522073827683922830, guid: ae03451de1bdfec44b8245fce7e19642,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 522073827683922830, guid: ae03451de1bdfec44b8245fce7e19642,
         type: 3}
