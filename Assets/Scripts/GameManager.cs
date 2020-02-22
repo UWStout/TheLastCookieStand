@@ -66,8 +66,12 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void WaveClear()
+    public void ConvOver()
     {
+        if (CurrentWave>=3)
+        {
+            BootToMainMenu();
+        }
 
 
 

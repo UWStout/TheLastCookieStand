@@ -14,6 +14,7 @@ public class DialogueSystem : MonoBehaviour
     public DialogueData[] Dialogue;
     public float DialogueTimeSpent;
     public GameObject dialogueObject;
+    public GameManager gm;
     AudioSource source;
     bool hasPlayedAudio;
 
@@ -96,6 +97,7 @@ public class DialogueSystem : MonoBehaviour
 
         Time.timeScale = 1;
         dialogueObject.SetActive(false);
+        gm.ConvOver();
     }
 
 

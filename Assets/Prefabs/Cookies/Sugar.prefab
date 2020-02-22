@@ -105,7 +105,7 @@ MonoBehaviour:
   currTile: {fileID: 0}
   isBaked: 0
   isBurnt: 0
-  bakeTime: 3
+  bakeTime: 1.5
   burntTime: 3
   cookTimer: 0
   sr: {fileID: 87142695883938383}
@@ -113,9 +113,8 @@ MonoBehaviour:
   cookieChip: {fileID: 0}
   attackDamage: 0
   attackDelay: 1
-  burntCookie: {fileID: 21300000, guid: 563ca299427c03c4ab713cfff249bc6c, type: 3}
   bakedCookie: {fileID: 0}
-  healPower: 0.5
+  healPower: 1
   healRange: 5.6
   burntHealth: 30
 --- !u!61 &2540649884473347427
@@ -238,11 +237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87142695883938376}
     m_Modifications:
-    - target: {fileID: 4571968107294243664, guid: c9bf7395681734044b7fcc2dea7387ad,
-        type: 3}
-      propertyPath: m_Name
-      value: CookieUi
-      objectReference: {fileID: 0}
     - target: {fileID: 4571968107294243667, guid: c9bf7395681734044b7fcc2dea7387ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -357,6 +351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571968107294243664, guid: c9bf7395681734044b7fcc2dea7387ad,
+        type: 3}
+      propertyPath: m_Name
+      value: CookieUi
       objectReference: {fileID: 0}
     - target: {fileID: 5280246073169244407, guid: c9bf7395681734044b7fcc2dea7387ad,
         type: 3}

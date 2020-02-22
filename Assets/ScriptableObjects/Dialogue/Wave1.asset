@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaComp:
     text:
-    - Wave 1 Placeholder
-    - Wave 1 Placeholder 2
+    - I am the sugar cookie
+    - Use me to heal stuff
     time:
-    - 5
-    - 5
+    - 3
+    - 3
     audio:
     - {fileID: 0}
     - {fileID: 0}
-  Name: Cookie King
+  Name: Sugar Cookie
   faceSprite: {fileID: 0}

@@ -43,11 +43,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Sky
+    uniqueID: 951725853
     locked: 0
   - name: Background
     uniqueID: 2309289313
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Tile
     uniqueID: 3271631449
