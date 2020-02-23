@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74cea4d2b12f5ae47bcde396def73e3f, type: 3}
-  m_Name: Wave2
+  m_Name: Wave3
   m_EditorClassIdentifier: 
   EnemiesAndFrequency:
   - Enemy: {fileID: 8281497706868137833, guid: 1799eb234b105074193789e3aa6a61b5, type: 3}
-    Frequency: 5
+    Frequency: 3
   - Enemy: {fileID: 5166328193807909128, guid: 00731eb70edc14d44a3cb8010e75445c, type: 3}
     Frequency: 2
   - Enemy: {fileID: 1933617078684584941, guid: 92c539b88691e63409a1384c9d94846e, type: 3}
+    Frequency: 1
+  - Enemy: {fileID: 300977446092033291, guid: ad384208b660afa4b8c87df39fb89b84, type: 3}
     Frequency: 1
   numOfEnemies: 36
   timeBetweenSpawns: 8

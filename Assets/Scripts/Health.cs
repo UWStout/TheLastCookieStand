@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Theoretically we don't need to check for this every frame. Don't want to change because it might break something. (Exploddy cookies)
         if (health<=0&&DestroyOnDeath)
         {
             Destroy(gameObject);

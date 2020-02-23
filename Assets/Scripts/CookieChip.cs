@@ -8,11 +8,12 @@ public class CookieChip : MonoBehaviour
     public SpriteRenderer sr;
     public Rigidbody2D rb2d;
     public float attackDamage;
+    public float reverse = 1;
     // Start is called before the first frame update
     void Start()
     {
         rb2d.freezeRotation = true;
-        if (gameObject.transform.position.x < 0)
+        if (gameObject.transform.position.x*reverse < 0)
         {
             mvmnt.Dir.x = -1;
             sr.flipX = true;

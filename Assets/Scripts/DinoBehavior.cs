@@ -10,9 +10,10 @@ public class DinoBehavior : MonoBehaviour
     public Rigidbody2D rb2d;
     public float attackDamage;
     public float attackTimer = 0.0f;
-    public float attackDelay;
+    //public float attackDelay;
     public float armorWeakness = .5f;
     public GameObject whatImHitting;
+    public bool isChicken = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,12 +47,6 @@ public class DinoBehavior : MonoBehaviour
             mvmnt.StartMoving();
         }
     }
-
-    private void FixedUpdate()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Cookie")||collision.gameObject.tag.Equals("Tower"))
@@ -71,18 +66,19 @@ public class DinoBehavior : MonoBehaviour
     private void hit(GameObject other)
     {
 
+        if (other.tag.Equals("Cookie") && other.gameObject.GetComponent<Cookie>().isBurnt &&!isChicken)
+        {
+            other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage*Time.deltaTime*armorWeakness);
+            //Debug.Log("Burnt Hit: "+attackDamage*Time.deltaTime*armorWeakness);
 
-        if (other.tag.Equals("Cookie"))// && attackTimer <= 0.0f)// && (other.gameObject.GetComponent<Cookie>().isBaked || other.gameObject.GetComponent<Cookie>().isBurnt))
+        }
+        else if (other.tag.Equals("Cookie"))
         {
             other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage*Time.deltaTime);
 
         }
-        else if (other.tag.Equals("Cookie") && (other.gameObject.GetComponent<Cookie>().isBaked || other.gameObject.GetComponent<Cookie>().isBurnt))
-        {
-            //other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage*armorWeakness);
 
-        }
-        else if (other.gameObject.tag.Equals("Tower"))//&& attackTimer <= 0.0f)
+        else if (other.gameObject.tag.Equals("Tower")&&!isChicken)
         {
             other.GetComponent<Health>().RemoveHealth(attackDamage*Time.deltaTime);
 
@@ -91,7 +87,7 @@ public class DinoBehavior : MonoBehaviour
     }
 
 
-    private void OnTriggerStay2D(Collider2D other)
+    /*private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("OnTriggerStay");
 
@@ -105,16 +101,17 @@ public class DinoBehavior : MonoBehaviour
         else
         {
             attackTimer -= Time.deltaTime;
-        }*/
+        }
 
-    }
+    }*/
 
+    /*
     private void OnTriggerExit2D(Collider2D collision)
     {
 
         //whatImHitting=null;
         //attackTimer = 0.0f;
-    }
+    }*/
 
     private void OnDestroy()
     {

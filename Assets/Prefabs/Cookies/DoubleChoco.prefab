@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2449216959935890674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.59, y: -5.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 2673329672196615401}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 910534849
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 01c945b6a07afe642827a16678c3afdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,7 +105,7 @@ MonoBehaviour:
   currTile: {fileID: 0}
   isBaked: 0
   isBurnt: 0
-  bakeTime: 3
+  bakeTime: 14
   burntTime: 5
   cookTimer: 0
   sr: {fileID: 2449216959935890672}
@@ -114,11 +114,13 @@ MonoBehaviour:
     type: 3}
   attackDamage: 0
   attackDelay: 2
-  burntCookie: {fileID: 21300000, guid: 563ca299427c03c4ab713cfff249bc6c, type: 3}
   bakedCookie: {fileID: 21300000, guid: 491bc485b7582c34fa50c7cfa36f458e, type: 3}
   healPower: 0
   healRange: 5.6
-  burntHealth: 30
+  burntHealth: 15
+  doubleShot: 1
+  explosive: 0
+  anim: {fileID: 0}
 --- !u!61 &255290739268916188
 BoxCollider2D:
   m_ObjectHideFlags: 0

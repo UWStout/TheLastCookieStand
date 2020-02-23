@@ -26,7 +26,9 @@ public class GameManager : MonoBehaviour
     public int EnemiesLeftAlive = 0;
     public int EnemiesTotal = 0;
     public int EnemiesLeftToSpawn = 0;
-    
+
+
+    public int MaxLevel =6;
     //Dialogue Controller
     public GameObject DialogueObject;
     public DialogueSystem diaSys;
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void ConvOver()
     {
-        if (CurrentWave>=3)
+        if (CurrentWave>=MaxLevel)
         {
             BootToMainMenu();
         }

@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public Vector2 Dir = new Vector2(1,0);
     public float MoveSpeed;
     public bool moveOnStart = false;
+    public Vector2 StoredVel;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +27,21 @@ public class Movement : MonoBehaviour
 
     public void StartMoving()
     {
-        GetComponent<Rigidbody2D>().velocity = Dir * MoveSpeed;
+
+        if (StoredVel==null){
+            StoredVel = Dir * MoveSpeed;
+        }
+        GetComponent<Rigidbody2D>().velocity = StoredVel;
     }
 
     public void StopMoving()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2();
+    }
+
+    public void SetMovement(Vector2 vec)
+    {
+        StoredVel = vec;
+        StartMoving();
     }
 }

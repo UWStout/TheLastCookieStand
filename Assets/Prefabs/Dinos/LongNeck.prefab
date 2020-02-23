@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &300977446092033291
+--- !u!1 &1933617078684584941
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 422780531866765737}
-  - component: {fileID: 3879444120237461115}
-  - component: {fileID: 2791457408516349356}
-  - component: {fileID: 8299764780236411882}
-  - component: {fileID: -4260022838833448705}
-  - component: {fileID: 5628776523045760489}
-  - component: {fileID: 1179696677700820399}
-  - component: {fileID: 684211091063622242}
-  - component: {fileID: -8959686685371450043}
+  - component: {fileID: 4077998758593246525}
+  - component: {fileID: 4394819832710816012}
+  - component: {fileID: 4906083118050942635}
+  - component: {fileID: 1745642909004197808}
+  - component: {fileID: 5718462250737880747}
+  - component: {fileID: 8693017570059410710}
+  - component: {fileID: 3860197947811280599}
+  - component: {fileID: 3515051455689397269}
+  - component: {fileID: -5557680663456183753}
   m_Layer: 2
-  m_Name: Diagonal
+  m_Name: LongNeck
   m_TagString: Dino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &422780531866765737
+--- !u!4 &4077998758593246525
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
+  m_GameObject: {fileID: 1933617078684584941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalPosition: {x: -0.096, y: -0.143, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3879444120237461115
+--- !u!212 &4394819832710816012
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
+  m_GameObject: {fileID: 1933617078684584941}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1268903021
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 377780572b784574382d65c949b23437, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 771d29047cdbd234789db42063ba10c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,70 +87,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2791457408516349356
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2.940278}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.43944177, y: 0.14645402}
-    oldSize: {x: 21.371428, y: 18.699999}
-    newSize: {x: 21.371428, y: 18.699999}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.436875, y: 4.509267}
-  m_EdgeRadius: 0
---- !u!114 &8299764780236411882
+--- !u!114 &4906083118050942635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
+  m_GameObject: {fileID: 1933617078684584941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6078d0ea2b429c4dab426e3bd7c33fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 90
+  health: 90
+  DestroyOnDeath: 1
+--- !u!114 &1745642909004197808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933617078684584941}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eebbae7774ff12d4395e1e39589e3fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Dir: {x: 1, y: 0}
-  MoveSpeed: 0.2
+  MoveSpeed: 0.1
   moveOnStart: 0
---- !u!114 &-4260022838833448705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6078d0ea2b429c4dab426e3bd7c33fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 13
-  health: 13
-  DestroyOnDeath: 1
---- !u!50 &5628776523045760489
+--- !u!50 &5718462250737880747
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
+  m_GameObject: {fileID: 1933617078684584941}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -164,56 +138,84 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1179696677700820399
+--- !u!114 &8693017570059410710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
+  m_GameObject: {fileID: 1933617078684584941}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27b70e2adafb55d439caa9e6ad264405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hlth: {fileID: -4260022838833448705}
-  mvmnt: {fileID: 8299764780236411882}
-  sr: {fileID: 3879444120237461115}
-  rb2d: {fileID: 5628776523045760489}
+  hlth: {fileID: 4906083118050942635}
+  mvmnt: {fileID: 1745642909004197808}
+  sr: {fileID: 4394819832710816012}
+  rb2d: {fileID: 5718462250737880747}
   attackDamage: 3
   attackTimer: 0
-  armorWeakness: 0.5
+  armorWeakness: 0.2
   whatImHitting: {fileID: 0}
-  isChicken: 0
---- !u!114 &684211091063622242
+--- !u!61 &3860197947811280599
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933617078684584941}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.106200695, y: 2.1438777}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.14}
+    oldSize: {x: 21.371428, y: 18.699999}
+    newSize: {x: 21.371428, y: 18.699999}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.225789, y: 3.5141444}
+  m_EdgeRadius: 0
+--- !u!114 &3515051455689397269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
+  m_GameObject: {fileID: 1933617078684584941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0ab2d58e3f1ef46ba2eba24db23eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1933f4b10cf5aac43a350a09b539df9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   temp: 0
   temp2: 0
   ypos: 0
-  startSize: {x: 0, y: 0, z: 0}
   sr: {fileID: 0}
---- !u!114 &-8959686685371450043
-MonoBehaviour:
+--- !u!95 &-5557680663456183753
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300977446092033291}
+  m_GameObject: {fileID: 1933617078684584941}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 619635a28b3cc5c42ab2f352307856fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mvmt: {fileID: 0}
-  maxH: 0.25
-  minH: -4.3
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4ac2d51872eddf498bc63c34894ade9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

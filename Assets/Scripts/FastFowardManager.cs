@@ -26,7 +26,7 @@ public class FastFowardManager : MonoBehaviour
             {
                 fastButton.sprite=fastSprite;
                 isFast = true;
-                Time.timeScale = 2;
+                Time.timeScale = 3;
             }
         }
 
@@ -38,7 +38,7 @@ public class FastFowardManager : MonoBehaviour
         {
             if (isFast)
             {
-                Time.timeScale = 2;
+                Time.timeScale = 3;
             }
             else
             {

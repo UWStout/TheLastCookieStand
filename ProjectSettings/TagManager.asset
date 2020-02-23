@@ -61,6 +61,9 @@ TagManager:
   - name: Dino
     uniqueID: 3026064275
     locked: 0
+  - name: CookieDoughTiles
+    uniqueID: 3079932441
+    locked: 0
   - name: UI
     uniqueID: 3515876237
     locked: 0

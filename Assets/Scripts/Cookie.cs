@@ -24,6 +24,11 @@ public class Cookie : MonoBehaviour
     public float healPower = 0.0f;
     public float healRange = 5.6f;
     public float burntHealth = 30;
+    public bool doubleShot = false;
+
+
+    public bool explosive;
+    public Animator anim;
     //SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -54,6 +59,26 @@ public class Cookie : MonoBehaviour
                 //sr.sprite = bakedCookie;
             }
         }
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Dino")&&explosive&&isBaked && currTile != null && currTile.tileType.Equals("Tile"))
+        {
+            anim = GetComponent<Animator>();
+            anim.SetBool("IsExploding",true);
+            StartCoroutine(Explosive(collision.gameObject));
+        }
+    }
+
+    IEnumerator Explosive(GameObject dino)
+    {
+        yield return new WaitForSeconds(.5f);
+        dino.GetComponent<Health>().RemoveHealth(100000);
+        //hlth.health=0;
+        Destroy(gameObject);
     }
 
     public void TurnToBurnt()
@@ -92,7 +117,14 @@ public class Cookie : MonoBehaviour
 
             if (attackTimer == 0.0f)
             {
+                if (doubleShot)
+                {
+                    GameObject backChip = Instantiate(cookieChip, gameObject.transform);
+                    backChip.GetComponent<CookieChip>().reverse=-1;
+                }
+
                 Instantiate(cookieChip, gameObject.transform);
+
                 attackTimer += Time.deltaTime;
             }
 
