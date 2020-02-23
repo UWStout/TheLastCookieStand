@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         //This is kind of hacky
         if (moveOnStart)
         {
@@ -28,7 +29,7 @@ public class Movement : MonoBehaviour
     public void StartMoving()
     {
 
-        if (StoredVel==null){
+        if (StoredVel==new Vector2()){
             StoredVel = Dir * MoveSpeed;
         }
         GetComponent<Rigidbody2D>().velocity = StoredVel;
