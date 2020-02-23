@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8693017570059410710}
   - component: {fileID: 3860197947811280599}
   - component: {fileID: 3515051455689397269}
+  - component: {fileID: 7545454442222881485}
   m_Layer: 2
   m_Name: HardHead
   m_TagString: Dino
@@ -116,6 +117,7 @@ MonoBehaviour:
   Dir: {x: 1, y: 0}
   MoveSpeed: 0.1
   moveOnStart: 0
+  StoredVel: {x: 0, y: 0}
 --- !u!50 &5718462250737880747
 Rigidbody2D:
   serializedVersion: 4
@@ -157,6 +159,7 @@ MonoBehaviour:
   attackTimer: 0
   armorWeakness: 0.2
   whatImHitting: {fileID: 0}
+  isChicken: 0
 --- !u!61 &3860197947811280599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,3 +202,22 @@ MonoBehaviour:
   temp2: 0
   ypos: 0
   sr: {fileID: 0}
+--- !u!95 &7545454442222881485
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933617078684584941}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd2346715ddf8384ebdc041caa7ec22e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
