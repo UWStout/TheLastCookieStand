@@ -29,6 +29,7 @@ public class Cookie : MonoBehaviour
 
     public bool explosive;
     public Animator anim;
+    public GameObject  UI;
     //SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -65,7 +66,7 @@ public class Cookie : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Dino")&&explosive&&isBaked && currTile != null && currTile.tileType.Equals("Tile"))
+        if (collision.gameObject.tag.Equals("Dino")&&explosive&&isBaked && currTile != null && currTile.tileType.Equals("Tile")&&!isBurnt)
         {
             anim = GetComponent<Animator>();
             anim.SetBool("IsExploding",true);
@@ -91,6 +92,11 @@ public class Cookie : MonoBehaviour
         attackDamage = 0.0f;
         cookieChip = null;
         attackDelay = 0.0f;
+
+        if (explosive)
+        {
+            UI.SetActive(true);
+        }
     }
 
     public void FixFlip()

@@ -120,6 +120,7 @@ MonoBehaviour:
   doubleShot: 0
   explosive: 1
   anim: {fileID: 0}
+  UI: {fileID: 5181803936975365297}
 --- !u!61 &255290739268916188
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,6 +177,7 @@ MonoBehaviour:
   Dir: {x: 1, y: 0}
   MoveSpeed: 0
   moveOnStart: 0
+  StoredVel: {x: 0, y: 0}
 --- !u!50 &4914438192252563257
 Rigidbody2D:
   serializedVersion: 4
@@ -396,6 +398,12 @@ PrefabInstance:
 --- !u!224 &2673329672196615401 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4571968107294243667, guid: c9bf7395681734044b7fcc2dea7387ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 1903747111874877370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5181803936975365297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6737948888106889995, guid: c9bf7395681734044b7fcc2dea7387ad,
     type: 3}
   m_PrefabInstance: {fileID: 1903747111874877370}
   m_PrefabAsset: {fileID: 0}
