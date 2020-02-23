@@ -37,7 +37,7 @@ public class DinoBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(whatImHitting!=null)
+        if(whatImHitting!=null&&((whatImHitting.tag!="Tower")||!isChicken))
         {
             hit(whatImHitting);
             mvmnt.StopMoving();
