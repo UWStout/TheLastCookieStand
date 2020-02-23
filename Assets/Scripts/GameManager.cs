@@ -45,10 +45,10 @@ public class GameManager : MonoBehaviour
         //Commenting out this don't destroy on load thing.
         //DontDestroyOnLoad(gameObject);
 
-        Debug.Log("Yes?");
+        //Debug.Log("Yes?");
 
         mc = GameObject.FindWithTag("MainCamera").GetComponent<MouseControl>();
-        Debug.Log(mc);
+        //Debug.Log(mc);
     }
 
     IEnumerator DialogueSetup(int conv)
