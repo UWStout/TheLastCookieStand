@@ -39,11 +39,13 @@ public class DinoBehavior : MonoBehaviour
     {
         if(whatImHitting!=null&&((whatImHitting.tag!="Tower")||!isChicken))
         {
+            GetComponent<Animator>().Play("Attack");
             hit(whatImHitting);
             mvmnt.StopMoving();
         }
         else
         {
+            GetComponent<Animator>().Play("Walk");
             mvmnt.StartMoving();
         }
     }
@@ -51,7 +53,8 @@ public class DinoBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Cookie")||collision.gameObject.tag.Equals("Tower"))
         {
-            whatImHitting=collision.gameObject;
+            
+            whatImHitting =collision.gameObject;
             //StartCoroutine(StopMoving());
 
         }

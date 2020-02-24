@@ -25,8 +25,8 @@ public class Cookie : MonoBehaviour
     public float healRange = 5.6f;
     public float burntHealth = 30;
     public bool doubleShot = false;
-
-
+    public ParticleSystem ps;
+    List<GameObject> hCookie = new List<GameObject>();
     public bool explosive;
     public Animator anim;
     public GameObject  UI;
@@ -38,6 +38,8 @@ public class Cookie : MonoBehaviour
         mvmnt.StartMoving();
         burntTime+=bakeTime;
         transform.gameObject.tag = "UncookedCookie";
+        ps = GetComponent<ParticleSystem>();
+        ps.Pause();
     }
 
     private void FixedUpdate()
@@ -167,6 +169,7 @@ public class Cookie : MonoBehaviour
 
         if(healPower != 0.0f)
         {
+            
             if (attackTimer == 0.0f)
             {
                 //Instantiate(cookieChip, gameObject.transform);
@@ -176,9 +179,17 @@ public class Cookie : MonoBehaviour
                 {
                     Vector3 diff = g.transform.position - transform.position;
                     float curDist = diff.sqrMagnitude;
-                    if(curDist < healRange)
+                    g.GetComponent<Cookie>().ps.Clear();
+                    g.GetComponent<Cookie>().ps.Pause();
+                    if (curDist < healRange)
                     {
+                        hCookie.Add(g);
+                        //g.GetComponent<Cookie>().ps.Stop(false);
+                        g.GetComponent<Cookie>().ps.Play();
                         g.GetComponent<Health>().AddHealth(healPower);
+                        //g.GetComponent<Cookie>().ps.Pause();
+                        //g.GetComponent<ParticleSystem>().Star
+
                     }
                 }
                 attackTimer += Time.deltaTime;
@@ -190,11 +201,20 @@ public class Cookie : MonoBehaviour
             }
             else
             {
+                
                 attackTimer += Time.deltaTime;
+                
             }
         }
     }
 
-    
+    private void OnDestroy()
+    {
+        foreach (GameObject g in hCookie)
+        {
+            g.GetComponent<Cookie>().ps.Clear();
+            g.GetComponent<Cookie>().ps.Pause();
+        }
+    }
 
 }

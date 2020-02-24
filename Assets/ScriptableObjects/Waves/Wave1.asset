@@ -19,7 +19,7 @@ MonoBehaviour:
     Frequency: 1
   numOfEnemies: 18
   timeBetweenSpawns: 16
-  timeBetweenSpawnsEnd: 2
+  timeBetweenSpawnsEnd: 3
   spawnLocationsArray:
   - {x: 10.7, y: 0.3}
   - {x: 10.7, y: -0.66}

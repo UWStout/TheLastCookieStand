@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemiesAndFrequency:
   - Enemy: {fileID: 8281497706868137833, guid: 1799eb234b105074193789e3aa6a61b5, type: 3}
+    Frequency: 10
+  - Enemy: {fileID: 841054533062793785, guid: aec5efc2f2c540547a8fa8c4baabdbc8, type: 3}
     Frequency: 1
   numOfEnemies: 8
   timeBetweenSpawns: 16
