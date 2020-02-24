@@ -92,7 +92,7 @@ public class Cookie : MonoBehaviour
         attackDamage = 0.0f;
         cookieChip = null;
         attackDelay = 0.0f;
-
+        healPower = 0.0f;
         if (explosive)
         {
             UI.SetActive(true);

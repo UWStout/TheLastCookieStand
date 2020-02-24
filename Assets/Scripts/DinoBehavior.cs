@@ -64,6 +64,7 @@ public class DinoBehavior : MonoBehaviour
 
         if (other.tag.Equals("Cookie") && other.gameObject.GetComponent<Cookie>().isBurnt &&!isChicken)
         {
+            Debug.Log("DAMAGE COOKIE");
             other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage*Time.deltaTime*armorWeakness);
             //Debug.Log("Burnt Hit: "+attackDamage*Time.deltaTime*armorWeakness);
 
