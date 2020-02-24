@@ -15,7 +15,7 @@ MonoBehaviour:
   diaComp:
     text:
     - Hello I am the cookie king.
-    - Kill those Dinos.
+    - Defend from those Dinos.
     time:
     - 3
     - 2
