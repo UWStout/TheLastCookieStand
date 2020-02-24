@@ -28,10 +28,6 @@ public class DinoBehavior : MonoBehaviour
             sr.flipX = true;
         }
         mvmnt.StartMoving();
-
-
-
-
     }
 
     // Update is called once per frame
