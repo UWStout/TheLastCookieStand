@@ -10,23 +10,34 @@ public class Cookie : MonoBehaviour
     public Tile currTile = null;
     public bool isBaked = false;
     public bool isBurnt = false;
+    //time to bake
     public float bakeTime = 12f;
+    //time to burn
     public float burntTime = 24f;
+    //timer
     public float cookTimer = 0f;
     public SpriteRenderer sr;
     public Rigidbody2D rb2d;
+    //projectile
     public GameObject cookieChip;
+    //attack values
     public float attackDamage;
     float attackTimer = 0.0f;
     public float attackDelay;
-    //public RuntimeAnimatorController burntCookie;
+    //baked cookie spite
     public Sprite bakedCookie;
+    //healing value for sugar
     public float healPower = 0.0f;
     public float healRange = 5.6f;
+    //health of burnt cookie
     public float burntHealth = 30;
+    //backward shot
     public bool doubleShot = false;
+    //healing particle
     public ParticleSystem ps;
+    //cookies for healing particle
     List<GameObject> hCookie = new List<GameObject>();
+    //can explode?
     public bool explosive;
     public Animator anim;
     public GameObject  UI;
@@ -34,6 +45,7 @@ public class Cookie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //freeze, setup, set to uncooked
         rb2d.freezeRotation = true;
         mvmnt.StartMoving();
         burntTime+=bakeTime;
@@ -46,28 +58,25 @@ public class Cookie : MonoBehaviour
     {
         if(currTile != null && cookTimer < burntTime && currTile.tileType.Equals("Oven"))
         {
+            //increase cook timer
             cookTimer += 1f * Time.deltaTime;
-            
             if(cookTimer >= burntTime)
             {
-                //Debug.Log("Burnt");
+                //cookie is burnt
                 isBurnt = true;
                 TurnToBurnt();
             }
             else if (cookTimer >= bakeTime)
             {
-                //Debug.Log("Baked");
+                //cokie is baked
                 isBaked = true;
-                
-                //sr.sprite = bakedCookie;
             }
         }
     }
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //explode condition
         if (collision.gameObject.tag.Equals("Dino")&&explosive&&isBaked && currTile != null && currTile.tileType.Equals("Tile")&&!isBurnt)
         {
             anim = GetComponent<Animator>();
@@ -80,13 +89,13 @@ public class Cookie : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         dino.GetComponent<Health>().RemoveHealth(100000);
-        //hlth.health=0;
         Destroy(gameObject);
     }
 
+    //cookie becomes burnt
     public void TurnToBurnt()
-    {
-        //sr.sprite = burntCookie;
+    { 
+        //set animation and values
         gameObject.GetComponent<Animator>().Play("BurntCookie");
         hlth.health = burntHealth;
         hlth.maxHealth = burntHealth;
@@ -101,14 +110,13 @@ public class Cookie : MonoBehaviour
         }
     }
 
+    //flips cookie based on what side its on
     public void FixFlip()
     {
-        //Debug.Log("fix flip" + Input.mousePosition.x);
         if (gameObject.transform.position.x < 0)
         {
             mvmnt.Dir.x = -1;
             sr.flipX = true;
-
         }
         else
         {
@@ -125,12 +133,13 @@ public class Cookie : MonoBehaviour
 
             if (attackTimer == 0.0f)
             {
+                //shoot back chip
                 if (doubleShot)
                 {
                     GameObject backChip = Instantiate(cookieChip, gameObject.transform);
                     backChip.GetComponent<CookieChip>().reverse=-1;
                 }
-
+                //shoot back chip
                 Instantiate(cookieChip, gameObject.transform);
 
                 attackTimer += Time.deltaTime;
@@ -145,27 +154,6 @@ public class Cookie : MonoBehaviour
                 attackTimer += Time.deltaTime;
             }
         }
-
-
-        /*
-        if (attackDamage != 0.0f)
-        {
-            if (attackTimer == 0.0f)
-            {
-                Instantiate(cookieChip, gameObject.transform);
-                attackTimer += Time.deltaTime;
-            }
-
-            if (attackTimer >= attackDelay)
-            {
-                attackTimer = 0.0f;
-            }
-            else
-            {
-                attackTimer += Time.deltaTime;
-            }
-        }
-        */
 
         if(healPower != 0.0f)
         {

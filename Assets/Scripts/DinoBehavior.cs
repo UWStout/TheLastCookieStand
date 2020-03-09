@@ -8,20 +8,21 @@ public class DinoBehavior : MonoBehaviour
     public Movement mvmnt;
     public SpriteRenderer sr;
     public Rigidbody2D rb2d;
+    //Used to attack
     public float attackDamage;
     public float attackTimer = 0.0f;
-    //public float attackDelay;
     public float armorWeakness = .5f;
     public GameObject whatImHitting;
+    //if dino is a chicken
     public bool isChicken = false;
     // Start is called before the first frame update
     void Start()
     {
+        //flip depending on what side
         rb2d.freezeRotation = true;
         if (gameObject.transform.position.x>0)
         {
             mvmnt.Dir.x = -1;
-            
         }
         else
         {
@@ -33,15 +34,21 @@ public class DinoBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Dino Attack
         if(whatImHitting!=null&&((whatImHitting.tag!="Tower")||!isChicken))
         {
+            //animation
             GetComponent<Animator>().Play("Attack");
             hit(whatImHitting);
+            //movement
             mvmnt.StopMoving();
         }
+        //Dino Walk
         else
         {
+            //animation
             GetComponent<Animator>().Play("Walk");
+            //movement
             mvmnt.StartMoving();
         }
     }
@@ -51,70 +58,39 @@ public class DinoBehavior : MonoBehaviour
         {
             
             whatImHitting =collision.gameObject;
-            //StartCoroutine(StopMoving());
 
         }
     }
-    /*
-    IEnumerator StopMoving()
-    {
-        yield return new WaitForSeconds(.05f);
-        mvmnt.StopMoving();
-    }*/
 
+    //Deal damage
     private void hit(GameObject other)
     {
 
         if (other.tag.Equals("Cookie") && other.gameObject.GetComponent<Cookie>().isBurnt &&!isChicken)
         {
-            Debug.Log("DAMAGE COOKIE");
+            //Damage cookie with armor weakness
             other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage*Time.deltaTime*armorWeakness);
-            //Debug.Log("Burnt Hit: "+attackDamage*Time.deltaTime*armorWeakness);
 
         }
         else if (other.tag.Equals("Cookie"))
         {
+            //Damage cookie
             other.gameObject.GetComponent<Health>().RemoveHealth(attackDamage*Time.deltaTime);
 
         }
 
         else if (other.gameObject.tag.Equals("Tower")&&!isChicken)
         {
+            //Damage tower
             other.GetComponent<Health>().RemoveHealth(attackDamage*Time.deltaTime);
 
 
         }
     }
 
-
-    /*private void OnTriggerStay2D(Collider2D other)
-    {
-        Debug.Log("OnTriggerStay");
-
-
-
-        /*
-        if(attackTimer <= 0f)
-        {
-            attackTimer = attackDelay;
-        }
-        else
-        {
-            attackTimer -= Time.deltaTime;
-        }
-
-    }*/
-
-    /*
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
-        //whatImHitting=null;
-        //attackTimer = 0.0f;
-    }*/
-
     private void OnDestroy()
     {
+        //Remove from enemy counter
         GameManager.instance.EnemiesLeftAlive -= 1;
     }
 }
