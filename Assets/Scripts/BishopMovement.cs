@@ -5,7 +5,6 @@ using UnityEngine;
 public class BishopMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-
     public Movement mvmt;
     public float maxH = .25f;
     public float minH = -4.3f;
@@ -15,15 +14,13 @@ public class BishopMovement : MonoBehaviour
     bool init = false;
     void Start()
     {
-
         mvmt=GetComponent<Movement>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //start diagonal up
         if (mvmt.StoredVel==null||mvmt.StoredVel.y==(0))
         {
             if (!init||mvmt.StoredVel.y==(0))
@@ -36,13 +33,10 @@ public class BishopMovement : MonoBehaviour
 
             }
 
-
-
-
-
         }
         else
         {
+            //diagonal up
             if (GetComponent<Rigidbody2D>().position.y<=minH&&!upB)
             {
                 mvmt.SetMovement((mvmt.Dir + up)* mvmt.MoveSpeed);
@@ -50,6 +44,7 @@ public class BishopMovement : MonoBehaviour
                 doB=false;
                 Debug.Log("Up:" + (mvmt.Dir + up)* mvmt.MoveSpeed);
             }
+            //diagonal down
             else if (GetComponent<Rigidbody2D>().position.y>=maxH&&!doB)
             {
                 mvmt.SetMovement((mvmt.Dir + up*-1)* mvmt.MoveSpeed);

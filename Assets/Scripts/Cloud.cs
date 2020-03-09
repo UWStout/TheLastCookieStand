@@ -7,14 +7,11 @@ public class Cloud : MonoBehaviour
     // Start is called before the first frame update
     public float TimeTillKill = 4f;
     bool ShouldDestroy=false;
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
+        //destroy over time
         if (TimeTillKill>=0)
         {
             TimeTillKill-=Time.deltaTime;

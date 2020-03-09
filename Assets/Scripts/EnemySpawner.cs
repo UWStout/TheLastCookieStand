@@ -19,17 +19,7 @@ public class EnemySpawner : MonoBehaviour
     public List<GameObject> EnemyList;
     public List<GameObject> EnemyListTemp;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-
-
     void Update()
     {
         //It might make since to temporarily disable the enemy spawner when it is not being used. Right now I am just using a check though.

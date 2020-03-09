@@ -37,7 +37,6 @@ public class CloudSpawner : MonoBehaviour
         else
         {
             //we could also randomize this by adding or subtracting a random number to this.
-            //This really shouldnt be hard coded.
             timeTracker=timeBetweenSpawns+(timeBetweenSpawns*Random.Range(-.3f,.3f));
             timeTracker = timeBetweenSpawns;
             PickWhatToSpawn();
